@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ЮНИГРУП — Производство и продажа воздуховодов, Троицк</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;900&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Manrope',sans-serif;color:#1a1a2e;background:#fff;overflow-x:hidden;line-height:1.6}
+
+:root{
+  --ink:#0f1523;
+  --ink2:#3a4060;
+  --blue:#1952e8;
+  --blue2:#0e3bbf;
+  --ice:#eef3ff;
+  --steel:#f4f6fb;
+  --border:#e2e6f0;
+  --white:#fff;
+  --gray:#8090a8;
+  --green:#00b87a;
+  --orange:#ff7a00;
+  --red:#e53e3e;
+  --shadow:0 2px 20px rgba(20,40,100,.08);
+  --shadow-lg:0 8px 48px rgba(20,40,100,.13);
+}
+
+/* UTIL */
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+.section{padding:96px 0}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+.section-label::before{content:'';width:20px;height:2px;background:var(--blue)}
+.section-title{font-family:'Unbounded',sans-serif;font-size:clamp(28px,3.5vw,46px);font-weight:700;line-height:1.1;color:var(--ink);margin-bottom:16px}
+.section-sub{font-size:16px;color:var(--ink2);max-width:560px;margin-bottom:56px;line-height:1.7}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:6px;font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;cursor:pointer;border:none;transition:all .2s;text-decoration:none;letter-spacing:.3px}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(25,82,232,.35)}
+.btn-outline{background:transparent;color:var(--blue);border:2px solid var(--blue)}
+.btn-outline:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
+.btn-white{background:#fff;color:var(--blue);font-weight:700}
+.btn-white:hover{background:var(--ice);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.4)}
+.btn-ghost:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+.tag{display:inline-block;padding:4px 12px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.tag-blue{background:var(--ice);color:var(--blue)}
+.tag-green{background:#e6faf3;color:var(--green)}
+.tag-orange{background:#fff3e6;color:var(--orange)}
+
+/* ──────── NAV ──────── */
+header{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:box-shadow .2s}
+header.scrolled{box-shadow:0 2px 24px rgba(20,40,100,.1)}
+.nav{max-width:1200px;margin:0 auto;padding:0 32px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:900;color:var(--ink);text-decoration:none;letter-spacing:-1px;flex-shrink:0}
+.logo span{color:var(--blue)}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:13px;font-weight:600;color:var(--ink2);text-decoration:none;transition:color .2s;white-space:nowrap}
+.nav-links a:hover{color:var(--blue)}
+.nav-contacts{display:flex;align-items:center;gap:16px;flex-shrink:0}
+.nav-phone{font-family:'Unbounded',sans-serif;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;transition:color .2s}
+.nav-phone:hover{color:var(--blue)}
+.nav-cta{padding:10px 20px;font-size:13px}
+
+/* ──────── HERO ──────── */
+#hero{padding-top:68px;background:var(--white);overflow:hidden;position:relative}
+.hero-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 68px);align-items:center;gap:64px}
+.hero-left{padding:72px 0}
+.hero-kicker{display:inline-flex;align-items:center;gap:10px;background:var(--ice);border:1px solid rgba(25,82,232,.15);border-radius:100px;padding:6px 16px;font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.5px;margin-bottom:28px}
+.hero-kicker span{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-title{font-family:'Unbounded',sans-serif;font-size:clamp(36px,4.5vw,60px);font-weight:900;line-height:1.0;color:var(--ink);margin-bottom:24px;letter-spacing:-1.5px}
+.hero-title em{color:var(--blue);font-style:normal;display:block}
+.hero-desc{font-size:16px;color:var(--ink2);line-height:1.75;margin-bottom:40px;max-width:460px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:var(--steel);border-radius:100px;font-size:12px;font-weight:600;color:var(--ink2)}
+.chip::before{content:'✓';color:var(--green);font-size:11px}
+
+/* hero right — visual */
+.hero-right{position:relative;height:100%;display:flex;align-items:center;justify-content:center}
+.hero-visual{position:relative;width:100%}
+.hero-bg-shape{position:absolute;top:-40px;right:-60px;width:500px;height:500px;background:linear-gradient(135deg,var(--ice) 0%,#dce8ff 100%);border-radius:40% 60% 70% 30% / 40% 50% 60% 50%;z-index:0;animation:morphBlob 12s ease-in-out infinite alternate}
+@keyframes morphBlob{0%{border-radius:40% 60% 70% 30% / 40% 50% 60% 50%}100%{border-radius:60% 40% 30% 70% / 50% 40% 60% 50%}}
+.hero-card-wrap{position:relative;z-index:1;display:flex;flex-direction:column;gap:16px;padding:32px}
+.hero-stat-card{background:#fff;border-radius:16px;padding:20px 24px;box-shadow:var(--shadow-lg);border:1px solid var(--border);display:flex;align-items:center;gap:16px}
+.hero-stat-icon{width:48px;height:48px;border-radius:12px;background:var(--ice);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.hero-stat-n{font-family:'Unbounded',sans-serif;font-size:26px;font-weight:900;color:var(--blue);line-height:1}
+.hero-stat-l{font-size:12px;color:var(--gray);margin-top:2px}
+.hero-badge{position:absolute;bottom:24px;right:0;background:var(--blue);color:#fff;border-radius:12px;padding:12px 18px;font-size:11px;font-weight:700;letter-spacing:.5px;box-shadow:0 8px 24px rgba(25,82,232,.4);z-index:2}
+
+/* ──────── STATS BAR ──────── */
+.stats-bar{background:var(--ink);padding:28px 0}
+.stats-bar-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.sb-item{text-align:center;padding:0 24px;border-right:1px solid rgba(255,255,255,.1)}
+.sb-item:last-child{border-right:none}
+.sb-n{font-family:'Unbounded',sans-serif;font-size:32px;font-weight:900;color:#fff;line-height:1;margin-bottom:4px}
+.sb-n span{color:var(--blue)}
+.sb-l{font-size:12px;color:rgba(255,255,255,.5);letter-spacing:.3px}
+
+/* ──────── CATALOG ──────── */
+#catalog{background:var(--steel)}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cat-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--border);transition:transform .22s,box-shadow .22s;cursor:pointer}
+.cat-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.cat-thumb{height:160px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.ct-zinc{background:linear-gradient(135deg,#c8d6e5 0%,#8da3b9 100%)}
+.ct-round{background:linear-gradient(135deg,#b8c6d4 0%,#6a8299 100%)}
+.ct-flex{background:linear-gradient(135deg,#d4c8b8 0%,#9e8a6a 100%)}
+.ct-fire{background:linear-gradient(135deg,#e5c8c8 0%,#b97070 100%)}
+.ct-fans{background:linear-gradient(135deg,#c8d4e5 0%,#6a8299 100%)}
+.ct-parts{background:linear-gradient(135deg,#d0d4c8 0%,#8a9970 100%)}
+.cat-icon{font-size:64px;opacity:.8;filter:drop-shadow(0 4px 12px rgba(0,0,0,.15))}
+.cat-badge{position:absolute;top:12px;left:12px}
+.cat-body{padding:20px}
+.cat-title{font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:6px;line-height:1.3}
+.cat-sub{font-size:12px;color:var(--gray);line-height:1.5;margin-bottom:14px}
+.cat-price-row{display:flex;align-items:baseline;gap:6px}
+.cat-from{font-size:11px;color:var(--gray)}
+.cat-price{font-family:'Unbounded',sans-serif;font-size:18px;font-weight:700;color:var(--blue)}
+.cat-unit{font-size:11px;color:var(--gray)}
+
+/* ──────── CALCULATOR ──────── */
+#calculator{background:#fff}
+.calc-layout{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.calc-form-wrap{background:var(--steel);border-radius:20px;padding:36px;border:1px solid var(--border)}
+.calc-form-wrap h3{font-family:'Unbounded',sans-serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:24px}
+.calc-section-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:12px;margin-top:24px}
+.calc-section-title:first-of-type{margin-top:0}
+.calc-rows{display:flex;flex-direction:column;gap:0}
+
+/* table-style rows */
+.calc-table{width:100%;border-collapse:collapse;margin-bottom:8px}
+.calc-table thead th{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gray);padding:8px 10px;text-align:left;background:rgba(255,255,255,.6);border-bottom:2px solid var(--border)}
+.calc-table tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
+.calc-table tbody tr:last-child{border-bottom:none}
+.calc-table tbody tr:hover{background:rgba(255,255,255,.8)}
+.calc-table td{padding:10px}
+.calc-table td:first-child{font-size:13px;color:var(--ink2);font-weight:500}
+.calc-input{width:100%;background:#fff;border:1.5px solid var(--border);border-radius:6px;padding:8px 10px;font-family:'Manrope',sans-serif;font-size:13px;color:var(--ink);outline:none;transition:border-color .2s;text-align:center}
+.calc-input:focus{border-color:var(--blue)}
+.calc-select{width:100%;background:#fff;border:1.5px solid var(--border);border-radius:6px;padding:8px 10px;font-family:'Manrope',sans-serif;font-size:13px;color:var(--ink);outline:none;cursor:pointer;transition:border-color .2s}
+.calc-select:focus{border-color:var(--blue)}
+.calc-add-btn{display:flex;align-items:center;gap:6px;background:none;border:1.5px dashed var(--blue);color:var(--blue);border-radius:6px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;font-family:'Manrope',sans-serif;margin-top:8px}
+.calc-add-btn:hover{background:var(--ice)}
+.calc-del-btn{background:none;border:none;color:#ccc;font-size:18px;cursor:pointer;padding:0 4px;line-height:1;transition:color .2s}
+.calc-del-btn:hover{color:var(--red)}
+
+/* result panel */
+.calc-result-wrap{position:sticky;top:88px}
+.calc-result-card{background:var(--ink);border-radius:20px;padding:36px;color:#fff;margin-bottom:16px}
+.calc-result-card h3{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:700;color:rgba(255,255,255,.6);margin-bottom:28px;letter-spacing:.5px}
+.result-line{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.result-line:last-of-type{border-bottom:none}
+.rl-name{font-size:13px;color:rgba(255,255,255,.6);flex:1;padding-right:12px;line-height:1.4}
+.rl-val{font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:#fff;white-space:nowrap}
+.result-total{margin-top:20px;padding-top:20px;border-top:2px solid rgba(255,255,255,.2)}
+.rt-label{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:6px}
+.rt-value{font-family:'Unbounded',sans-serif;font-size:40px;font-weight:900;color:#fff;line-height:1}
+.rt-value span{font-size:22px;color:rgba(255,255,255,.6)}
+.rt-note{font-size:11px;color:rgba(255,255,255,.35);margin-top:8px;line-height:1.5}
+.calc-disclaimer{background:var(--ice);border-radius:12px;padding:16px 20px;font-size:12px;color:var(--ink2);line-height:1.6;border:1px solid rgba(25,82,232,.1)}
+.calc-disclaimer strong{color:var(--blue)}
+
+/* ──────── WHY US ──────── */
+#why{background:var(--steel)}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.why-card{background:#fff;border-radius:16px;padding:28px 22px;border:1px solid var(--border);box-shadow:var(--shadow);transition:transform .22s,border-color .22s}
+.why-card:hover{transform:translateY(-4px);border-color:rgba(25,82,232,.2)}
+.why-icon{font-size:32px;margin-bottom:16px;display:block;line-height:1}
+.why-card h4{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:8px;line-height:1.3}
+.why-card p{font-size:13px;color:var(--gray);line-height:1.6}
+
+/* ──────── MATERIALS ──────── */
+#materials{background:#fff}
+.mat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.mat-card{border-radius:16px;overflow:hidden;border:1px solid var(--border)}
+.mat-head{padding:24px;display:flex;align-items:center;gap:14px}
+.mat-head-zinc{background:linear-gradient(135deg,#e8edf5,#c8d4e5)}
+.mat-head-inox{background:linear-gradient(135deg,#e5e5e5,#b8b8b8)}
+.mat-head-black{background:linear-gradient(135deg,#d0c8c0,#7a6e65)}
+.mat-icon-wrap{width:52px;height:52px;border-radius:12px;background:rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
+.mat-card h4{font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:var(--ink);line-height:1.2}
+.mat-card p{font-size:12px;color:var(--ink2);margin-top:4px;line-height:1.4}
+.mat-body{padding:20px 24px}
+.mat-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+.mat-list li{font-size:13px;color:var(--ink2);padding-left:20px;position:relative;line-height:1.5}
+.mat-list li::before{content:'→';position:absolute;left:0;color:var(--blue);font-weight:700;font-size:11px}
+
+/* ──────── HOW ──────── */
+#how{background:var(--ink)}
+#how .section-title{color:#fff}
+#how .section-sub{color:rgba(255,255,255,.5)}
+#how .section-label{color:rgba(100,160,255,.8)}
+.steps-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.steps-grid::before{content:'';position:absolute;top:30px;left:12%;right:12%;height:2px;background:linear-gradient(90deg,var(--blue),#00c2ff);z-index:0;opacity:.4}
+.step-card{position:relative;z-index:1;text-align:center;padding:0 8px}
+.step-num{width:60px;height:60px;border-radius:50%;background:var(--blue);border:4px solid var(--ink);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:'Unbounded',sans-serif;font-size:22px;font-weight:900;color:#fff;box-shadow:0 0 0 4px rgba(25,82,232,.25)}
+.step-card h4{font-family:'Unbounded',sans-serif;font-size:12px;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.3}
+.step-card p{font-size:12px;color:rgba(255,255,255,.4);line-height:1.6}
+
+/* ──────── DELIVERY ──────── */
+#delivery{background:var(--steel)}
+.del-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.del-card{background:#fff;border-radius:16px;padding:28px 24px;border:1px solid var(--border);box-shadow:var(--shadow);border-top:3px solid var(--blue)}
+.del-icon{font-size:36px;margin-bottom:16px;display:block}
+.del-card h4{font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:10px}
+.del-card p{font-size:13px;color:var(--gray);line-height:1.65}
+.del-card strong{color:var(--ink)}
+
+/* ──────── REVIEWS ──────── */
+#reviews{background:#fff}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rev-card{background:var(--steel);border-radius:16px;padding:24px;border:1px solid var(--border);position:relative;overflow:hidden;transition:box-shadow .2s}
+.rev-card:hover{box-shadow:var(--shadow-lg)}
+.rev-quote{position:absolute;top:16px;right:20px;font-family:'Unbounded',sans-serif;font-size:64px;line-height:1;color:rgba(25,82,232,.07);font-weight:900}
+.rev-stars{color:#f59e0b;font-size:13px;margin-bottom:12px;letter-spacing:2px}
+.rev-text{font-size:13px;color:var(--ink2);line-height:1.7;margin-bottom:18px}
+.rev-author{display:flex;align-items:center;gap:10px}
+.rev-ava{width:36px;height:36px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-family:'Unbounded',sans-serif;font-size:12px;font-weight:700;color:#fff;flex-shrink:0}
+.rev-name{font-size:13px;font-weight:700;color:var(--ink)}
+.rev-meta{font-size:11px;color:var(--gray)}
+
+/* ──────── FAQ ──────── */
+#faq{background:var(--steel)}
+.faq-wrap{max-width:760px}
+.faq-item{background:#fff;border-radius:12px;margin-bottom:8px;overflow:hidden;border:1px solid var(--border);box-shadow:0 1px 4px rgba(20,40,100,.05)}
+.faq-q{padding:18px 22px;font-size:15px;font-weight:600;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;transition:background .15s;gap:16px}
+.faq-q:hover{background:var(--ice)}
+.faq-arrow{width:28px;height:28px;border-radius:50%;background:var(--ice);display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:16px;font-weight:700;flex-shrink:0;transition:transform .25s,background .2s}
+.faq-item.open .faq-arrow{transform:rotate(45deg);background:var(--blue);color:#fff}
+.faq-a{font-size:13px;color:var(--ink2);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s;padding:0 22px}
+.faq-item.open .faq-a{max-height:240px;padding:0 22px 20px}
+
+/* ──────── CONTACT FORM ──────── */
+#contact{background:#fff}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.form-card{background:var(--steel);border-radius:20px;padding:40px;border:1px solid var(--border)}
+.form-card h3{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.form-card .sub{font-size:14px;color:var(--gray);margin-bottom:28px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group.full{grid-column:1/-1}
+label.fl{font-size:12px;font-weight:700;color:var(--ink2);letter-spacing:.3px}
+.fi{width:100%;background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:13px 16px;font-family:'Manrope',sans-serif;font-size:14px;color:var(--ink);outline:none;transition:border-color .2s;resize:vertical}
+.fi::placeholder{color:#b0b8c8}
+.fi:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(25,82,232,.08)}
+select.fi{cursor:pointer}
+select.fi option{background:#fff;color:var(--ink)}
+.form-agree{font-size:11px;color:var(--gray);margin-top:4px;line-height:1.5}
+.form-submit{margin-top:4px}
+
+/* contact info */
+.contact-info{padding-top:8px}
+.contact-info h3{font-family:'Unbounded',sans-serif;font-size:22px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.contact-info>.sub{font-size:15px;color:var(--gray);margin-bottom:36px}
+.ci-blocks{display:flex;flex-direction:column;gap:24px}
+.ci-block{display:flex;gap:16px;align-items:flex-start}
+.ci-icon{width:44px;height:44px;border-radius:12px;background:var(--ice);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.ci-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--blue);margin-bottom:4px}
+.ci-val{font-size:15px;font-weight:600;color:var(--ink)}
+.ci-val a{color:var(--ink);text-decoration:none;transition:color .2s}
+.ci-val a:hover{color:var(--blue)}
+.ci-note{font-size:12px;color:var(--gray);margin-top:2px}
+.msg-row{display:flex;gap:10px;margin-top:28px}
+.msg-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;transition:all .2s}
+.msg-wa{background:#25d366;color:#fff}
+.msg-wa:hover{background:#1eb858;transform:translateY(-2px)}
+.msg-tg{background:#229ed9;color:#fff}
+.msg-tg:hover{background:#1a85bb;transform:translateY(-2px)}
+.req-block{margin-top:28px;padding:16px 20px;background:var(--steel);border-radius:12px;border:1px solid var(--border)}
+.req-title{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gray);margin-bottom:8px}
+.req-lines{font-size:13px;color:var(--ink2);line-height:1.8}
+
+/* ──────── CTA BAND ──────── */
+.cta-band{background:linear-gradient(135deg,#1952e8 0%,#0e3bbf 50%,#0a2d9e 100%);padding:72px 0;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.cta-band h2{font-family:'Unbounded',sans-serif;font-size:clamp(24px,4vw,48px);font-weight:900;color:#fff;margin-bottom:14px;position:relative}
+.cta-band p{font-size:17px;color:rgba(255,255,255,.7);margin-bottom:36px;position:relative}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+
+/* ──────── FOOTER ──────── */
+footer{background:var(--ink);padding:36px 0}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Unbounded',sans-serif;font-size:18px;font-weight:900;color:#fff;text-decoration:none}
+.footer-logo span{color:var(--blue)}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.3)}
+.footer-inn{font-size:11px;color:rgba(255,255,255,.2)}
+
+/* TOAST */
+.toast{position:fixed;bottom:28px;right:28px;z-index:9999;background:var(--green);color:#fff;padding:14px 24px;border-radius:10px;font-size:14px;font-weight:700;box-shadow:0 8px 28px rgba(0,184,122,.4);transform:translateY(80px);opacity:0;transition:all .35s cubic-bezier(.34,1.56,.64,1);pointer-events:none}
+.toast.show{transform:translateY(0);opacity:1}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.vis{opacity:1;transform:translateY(0)}
+.fade-in:nth-child(1){transition-delay:.05s}
+.fade-in:nth-child(2){transition-delay:.12s}
+.fade-in:nth-child(3){transition-delay:.19s}
+.fade-in:nth-child(4){transition-delay:.26s}
+.fade-in:nth-child(5){transition-delay:.33s}
+.fade-in:nth-child(6){transition-delay:.40s}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;min-height:auto;padding-top:56px;padding-bottom:56px}
+  .hero-right{display:none}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .steps-grid{grid-template-columns:repeat(3,1fr)}
+  .steps-grid::before{display:none}
+  .calc-layout{grid-template-columns:1fr}
+  .calc-result-wrap{position:static}
+}
+@media(max-width:768px){
+  .container{padding:0 20px}
+  .section{padding:64px 0}
+  .cat-grid{grid-template-columns:1fr 1fr}
+  .del-grid{grid-template-columns:1fr}
+  .rev-grid{grid-template-columns:1fr}
+  .mat-grid{grid-template-columns:1fr}
+  .contact-layout{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .stats-bar-inner{grid-template-columns:repeat(2,1fr)}
+  .sb-item{padding:12px;border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}
+  .why-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .cat-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .steps-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header id="header">
+  <nav class="nav">
+    <a class="logo" href="#hero">ЮНИ<span>ГРУП</span></a>
+    <ul class="nav-links">
+      <li><a href="#catalog">Каталог</a></li>
+      <li><a href="#calculator">Калькулятор</a></li>
+      <li><a href="#materials">Материалы</a></li>
+      <li><a href="#delivery">Доставка</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-contacts">
+      <a href="tel:+79128324944" class="nav-phone">+7 (912) 832-49-44</a>
+      <a href="#contact" class="btn btn-blue nav-cta">Получить прайс</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-kicker"><span></span>&nbsp;Собственное производство · Троицк</div>
+      <h1 class="hero-title">Воздуховоды<em>и вентиляция</em>от производителя</h1>
+      <p class="hero-desc">Производство и продажа воздуховодов, фасонных изделий и вентиляционного оборудования. Более 5 000 позиций на складе. Изготовление по чертежам от 3 дней.</p>
+      <div class="hero-btns">
+        <a href="#calculator" class="btn btn-blue">Рассчитать стоимость →</a>
+        <a href="#contact" class="btn btn-outline">Получить прайс-лист</a>
+      </div>
+      <div class="hero-chips">
+        <div class="chip">Склад 5 000+ позиций</div>
+        <div class="chip">Отгрузка день в день</div>
+        <div class="chip">Работаем с НДС</div>
+        <div class="chip">Доставка по России</div>
+        <div class="chip">Изготовление по чертежу</div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-visual">
+        <div class="hero-bg-shape"></div>
+        <div class="hero-card-wrap">
+          <div class="hero-stat-card">
+            <div class="hero-stat-icon">📦</div>
+            <div>
+              <div class="hero-stat-n">5 000+</div>
+              <div class="hero-stat-l">позиций на складе</div>
+            </div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="hero-stat-icon">⚡</div>
+            <div>
+              <div class="hero-stat-n">1 день</div>
+              <div class="hero-stat-l">срок отгрузки типовых позиций</div>
+            </div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="hero-stat-icon">🏭</div>
+            <div>
+              <div class="hero-stat-n">15 лет</div>
+              <div class="hero-stat-l">на рынке вентиляции</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-badge">🏭 Производство в Троицке</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS BAR ── -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="sb-item"><div class="sb-n">5<span>к+</span></div><div class="sb-l">Позиций на складе</div></div>
+    <div class="sb-item"><div class="sb-n">15<span>лет</span></div><div class="sb-l">На рынке вентиляции</div></div>
+    <div class="sb-item"><div class="sb-n">1<span>день</span></div><div class="sb-l">Отгрузка типовых позиций</div></div>
+    <div class="sb-item"><div class="sb-n">3<span>дн</span></div><div class="sb-l">Изготовление по чертежу</div></div>
+  </div>
+</div>
+
+<!-- ── CATALOG ── -->
+<section id="catalog" class="section">
+  <div class="container">
+    <div class="section-label">Ассортимент</div>
+    <h2 class="section-title">Каталог продукции</h2>
+    <p class="section-sub">Воздуховоды, фасонные изделия, вентиляторы и комплектующие — всё в одном месте</p>
+    <div class="cat-grid">
+
+      <div class="cat-card fade-in">
+        <div class="cat-thumb ct-zinc">
+          <div class="cat-badge"><span class="tag tag-blue">Хит продаж</span></div>
+          <div class="cat-icon">📐</div>
+        </div>
+        <div class="cat-body">
+          <div class="cat-title">Прямоугольные воздуховоды</div>
+          <div class="cat-sub">Оцинкованная и нержавеющая сталь. Сечения 100×150 — 800×1000 мм. Длина 1.25/2.5 м</div>
+          <div class="cat-price-row">
+            <span class="cat-from">от</span>
+            <span class="cat-price">320</span>
+            <span class="cat-unit">₽/пм</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cat-card fade-in">
+        <div class="cat-thumb ct-round">
+          <div class="cat-badge"><span class="tag tag-blue">В наличии</span></div>
+          <div class="cat-icon">⭕</div>
+        </div>
+        <div class="cat-body">
+          <div class="cat-title">Круглые воздуховоды</div>
+          <div class="cat-sub">Спирально-навивные и прямошовные. Диаметр Ø100–1600 мм. Оцинк. и нерж. сталь</div>
+          <div class="cat-price-row">
+            <span class="cat-from">от</span>
+            <span class="cat-price">180</span>
+            <span class="cat-unit">₽/пм</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cat-card fade-in">
+        <div class="cat-thumb ct-flex">
+          <div class="cat-badge"><span class="tag tag-green">Склад</span></div>
+          <div class="cat-icon">🌀</div>
+        </div>
+        <div class="cat-body">
+          <div class="cat-title">Гибкие воздуховоды</div>
+          <div class="cat-sub">Армированный ПВХ и алюминий. Ø80–500 мм. Утеплённые и неутеплённые</div>
+          <div class="cat-price-row">
+            <span class="cat-from">от</span>
+            <span class="cat-price">95</span>
+            <span class="cat-unit">₽/пм</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cat-card fade-in">
+        <div class="cat-thumb ct-fire">
+          <div class="cat-badge"><span class="tag tag-orange">Спецзаказ</span></div>
+          <div class="cat-icon">🔥</div>
+        </div>
+        <div class="cat-body">
+          <div class="cat-title">Дымоудаление / Огнезащита</div>
+          <div class="cat-sub">Чёрная сталь 1.2–3 мм. Огнезащитное покрытие. Класс П (900°C/120 мин). Сертификаты</div>
+          <div class="cat-price-row">
+            <span class="cat-from">от</span>
+            <span class="cat-price">890</span>
+            <span class="cat-unit">₽/пм</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cat-card fade-in">
+        <div class="cat-thumb ct-fans">
+          <div class="cat-badge"><span class="tag tag-blue">Оборудование</span></div>
+          <div class="cat-icon">💨</div>
+        </div>
+        <div class="cat-body">
+          <div class="cat-title">Вентиляторы и установки</div>
+          <div class="cat-sub">Канальные, осевые, крышные. Приточные установки с нагревом. ПВУ с рекуперацией</div>
+          <div class="cat-price-row">
+            <span class="cat-from">от</span>
+            <span class="cat-price">2 800</span>
+            <span class="cat-unit">₽/шт</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cat-card fade-in">
+        <div class="cat-thumb ct-parts">
+          <div class="cat-badge"><span class="tag tag-green">Всегда есть</span></div>
+          <div class="cat-icon">🔩</div>
+        </div>
+        <div class="cat-body">
+          <div class="cat-title">Фасонные изделия и крепёж</div>
+          <div class="cat-sub">Отводы, тройники, переходы, решётки, диффузоры, клапаны, хомуты, подвесы</div>
+          <div class="cat-price-row">
+            <span class="cat-from">от</span>
+            <span class="cat-price">35</span>
+            <span class="cat-unit">₽/шт</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CALCULATOR ── -->
+<section id="calculator" class="section">
+  <div class="container">
+    <div class="section-label">Онлайн-расчёт</div>
+    <h2 class="section-title">Калькулятор воздуховодов</h2>
+    <p class="section-sub">Добавьте нужные позиции, укажите размеры и количество — получите ориентировочную стоимость по рыночным ценам</p>
+    <div class="calc-layout">
+
+      <!-- LEFT: form -->
+      <div class="calc-form-wrap">
+        <h3>📋 Ваша спецификация</h3>
+
+        <div class="calc-section-title">Прямоугольные воздуховоды (оцинк.)</div>
+        <table class="calc-table" id="rect-table">
+          <thead>
+            <tr>
+              <th>Сечение (мм)</th>
+              <th>Длина (пм)</th>
+              <th>Кол-во</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="rect-body">
+            <tr data-type="rect">
+              <td>
+                <select class="calc-select" onchange="recalc()">
+                  <option value="100x150" data-p="320">100×150</option>
+                  <option value="150x150" data-p="380">150×150</option>
+                  <option value="200x100" data-p="360">200×100</option>
+                  <option value="200x200" data-p="480" selected>200×200</option>
+                  <option value="250x250" data-p="580">250×250</option>
+                  <option value="300x200" data-p="620">300×200</option>
+                  <option value="300x300" data-p="740">300×300</option>
+                  <option value="400x200" data-p="720">400×200</option>
+                  <option value="400x300" data-p="870">400×300</option>
+                  <option value="400x400" data-p="980">400×400</option>
+                  <option value="500x300" data-p="960">500×300</option>
+                  <option value="500x500" data-p="1240">500×500</option>
+                  <option value="600x400" data-p="1350">600×400</option>
+                  <option value="800x500" data-p="1850">800×500</option>
+                  <option value="1000x500" data-p="2200">1000×500</option>
+                </select>
+              </td>
+              <td><input type="number" class="calc-input" value="10" min="1" onchange="recalc()" oninput="recalc()"></td>
+              <td><input type="number" class="calc-input" value="1" min="1" onchange="recalc()" oninput="recalc()"></td>
+              <td><button class="calc-del-btn" onclick="delRow(this)" title="Удалить">×</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="calc-add-btn" onclick="addRow('rect','rect-body')">＋ Добавить типоразмер</button>
+
+        <div class="calc-section-title">Круглые воздуховоды (спир.-навивные)</div>
+        <table class="calc-table">
+          <thead>
+            <tr>
+              <th>Диаметр (мм)</th>
+              <th>Длина (пм)</th>
+              <th>Кол-во</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="round-body">
+            <tr data-type="round">
+              <td>
+                <select class="calc-select" onchange="recalc()">
+                  <option value="d100" data-p="180">Ø100</option>
+                  <option value="d125" data-p="200">Ø125</option>
+                  <option value="d160" data-p="240" selected>Ø160</option>
+                  <option value="d200" data-p="280">Ø200</option>
+                  <option value="d250" data-p="340">Ø250</option>
+                  <option value="d315" data-p="420">Ø315</option>
+                  <option value="d400" data-p="540">Ø400</option>
+                  <option value="d500" data-p="750">Ø500</option>
+                  <option value="d630" data-p="980">Ø630</option>
+                  <option value="d800" data-p="1380">Ø800</option>
+                  <option value="d1000" data-p="1850">Ø1000</option>
+                  <option value="d1250" data-p="2600">Ø1250</option>
+                  <option value="d1600" data-p="3400">Ø1600</option>
+                </select>
+              </td>
+              <td><input type="number" class="calc-input" value="5" min="1" onchange="recalc()" oninput="recalc()"></td>
+              <td><input type="number" class="calc-input" value="1" min="1" onchange="recalc()" oninput="recalc()"></td>
+              <td><button class="calc-del-btn" onclick="delRow(this)" title="Удалить">×</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="calc-add-btn" onclick="addRow('round','round-body')">＋ Добавить диаметр</button>
+
+        <div class="calc-section-title">Гибкие воздуховоды</div>
+        <table class="calc-table">
+          <thead>
+            <tr>
+              <th>Диаметр / тип</th>
+              <th>Длина (пм)</th>
+              <th>Кол-во</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="flex-body">
+            <tr data-type="flex">
+              <td>
+                <select class="calc-select" onchange="recalc()">
+                  <option value="f100" data-p="95">Ø100 ПВХ арм.</option>
+                  <option value="f125" data-p="110" selected>Ø125 ПВХ арм.</option>
+                  <option value="f160" data-p="140">Ø160 ПВХ арм.</option>
+                  <option value="f200" data-p="175">Ø200 ПВХ арм.</option>
+                  <option value="f250" data-p="220">Ø250 ПВХ арм.</option>
+                  <option value="f315" data-p="280">Ø315 ПВХ арм.</option>
+                  <option value="fi125" data-p="195">Ø125 утеплённый</option>
+                  <option value="fi160" data-p="240">Ø160 утеплённый</option>
+                  <option value="fi200" data-p="300">Ø200 утеплённый</option>
+                  <option value="fi250" data-p="380">Ø250 утеплённый</option>
+                </select>
+              </td>
+              <td><input type="number" class="calc-input" value="3" min="1" onchange="recalc()" oninput="recalc()"></td>
+              <td><input type="number" class="calc-input" value="1" min="1" onchange="recalc()" oninput="recalc()"></td>
+              <td><button class="calc-del-btn" onclick="delRow(this)" title="Удалить">×</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="calc-add-btn" onclick="addRow('flex','flex-body')">＋ Добавить позицию</button>
+
+        <div class="calc-section-title">Фасонные изделия</div>
+        <table class="calc-table">
+          <thead>
+            <tr>
+              <th>Наименование</th>
+              <th colspan="2">Количество (шт)</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="fason-body">
+            <tr data-type="fason">
+              <td>
+                <select class="calc-select" onchange="recalc()">
+                  <option value="o90r200" data-p="280">Отвод 90° Ø200</option>
+                  <option value="o90r160" data-p="220" selected>Отвод 90° Ø160</option>
+                  <option value="o90r315" data-p="380">Отвод 90° Ø315</option>
+                  <option value="tee200" data-p="420">Тройник круглый Ø200</option>
+                  <option value="tee160" data-p="350">Тройник круглый Ø160</option>
+                  <option value="tr200x160" data-p="320">Переход Ø200/160</option>
+                  <option value="rect_o200" data-p="480">Отвод прям. 200×200</option>
+                  <option value="rect_t200" data-p="650">Тройник прям. 200×200</option>
+                  <option value="grille150" data-p="180">Решётка 150×150</option>
+                  <option value="grille200" data-p="240">Решётка 200×200</option>
+                  <option value="diff160" data-p="420">Диффузор Ø160</option>
+                  <option value="diff200" data-p="540">Диффузор потол. 595×595</option>
+                  <option value="valv160" data-p="680">Клапан обратный Ø160</option>
+                  <option value="ppk200" data-p="3400">Клапан ППК 200×200</option>
+                  <option value="silenсer" data-p="2800">Шумоглушитель Ø200</option>
+                </select>
+              </td>
+              <td colspan="2"><input type="number" class="calc-input" value="4" min="1" onchange="recalc()" oninput="recalc()"></td>
+              <td><button class="calc-del-btn" onclick="delRow(this)" title="Удалить">×</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="calc-add-btn" onclick="addRow('fason','fason-body')">＋ Добавить изделие</button>
+      </div>
+
+      <!-- RIGHT: result -->
+      <div class="calc-result-wrap">
+        <div class="calc-result-card">
+          <h3>РАСЧЁТ СТОИМОСТИ</h3>
+          <div id="result-lines">
+            <div class="result-line"><span class="rl-name">Добавьте позиции в таблицу слева</span><span class="rl-val">—</span></div>
+          </div>
+          <div class="result-total">
+            <div class="rt-label">ИТОГО ОРИЕНТИРОВОЧНО:</div>
+            <div class="rt-value" id="result-total"><span>—</span></div>
+            <div class="rt-note">Без учёта доставки. Цены включают НДС 20%.<br>Точная стоимость — после подтверждения наличия на складе.</div>
+          </div>
+        </div>
+        <div class="calc-disclaimer">
+          <strong>Как получить точную смету?</strong><br>
+          Заполните форму ниже или отправьте спецификацию в WhatsApp / на email — рассчитаем в течение 30 минут с учётом оптовых скидок и актуального наличия.
+        </div>
+        <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
+          <a href="#contact" class="btn btn-blue" style="flex:1;justify-content:center">Отправить заявку →</a>
+          <a href="https://wa.me/79128324944" class="btn msg-wa" style="flex:1;justify-content:center">WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY US ── -->
+<section id="why" class="section">
+  <div class="container">
+    <div class="section-label">Преимущества</div>
+    <h2 class="section-title">Почему выбирают Юнигруп</h2>
+    <p class="section-sub">Работаем напрямую с монтажными организациями, застройщиками и частными покупателями</p>
+    <div class="why-grid">
+      <div class="why-card fade-in">
+        <span class="why-icon">🏭</span>
+        <h4>Собственное производство</h4>
+        <p>Изготавливаем воздуховоды на собственном оборудовании. Нестандартные позиции — по чертежу за 3 дня</p>
+      </div>
+      <div class="why-card fade-in">
+        <span class="why-icon">📦</span>
+        <h4>Склад 5 000+ позиций</h4>
+        <p>Типовые размеры всегда в наличии. Заявка до 14:00 — отгрузка в тот же день</p>
+      </div>
+      <div class="why-card fade-in">
+        <span class="why-icon">💰</span>
+        <h4>Оптовые скидки</h4>
+        <p>От 5% при заказе от 50 000 ₽. До 25% для постоянных партнёров. Постоплата для юрлиц</p>
+      </div>
+      <div class="why-card fade-in">
+        <span class="why-icon">📄</span>
+        <h4>Полная документация</h4>
+        <p>Сертификаты соответствия, паспорта, счёт-фактуры, ТОРГ-12. Работаем на ОСНО</p>
+      </div>
+      <div class="why-card fade-in">
+        <span class="why-icon">🚚</span>
+        <h4>Доставка по России</h4>
+        <p>Собственный транспорт по Москве и МО. Отправка через СДЭК, ПЭК, Деловые линии</p>
+      </div>
+      <div class="why-card fade-in">
+        <span class="why-icon">🔧</span>
+        <h4>Техподдержка инженера</h4>
+        <p>Поможем подобрать сечения, материал и фасонные изделия под ваш проект бесплатно</p>
+      </div>
+      <div class="why-card fade-in">
+        <span class="why-icon">✅</span>
+        <h4>Гарантия на продукцию</h4>
+        <p>Гарантируем соответствие ГОСТ. Замена при заводском браке без споров</p>
+      </div>
+      <div class="why-card fade-in">
+        <span class="why-icon">💬</span>
+        <h4>Ответ за 15 минут</h4>
+        <p>WhatsApp, Telegram и email. Счёт на оплату — в течение 30 минут после заявки</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MATERIALS ── -->
+<section id="materials" class="section">
+  <div class="container">
+    <div class="section-label">Материалы</div>
+    <h2 class="section-title">Из чего изготавливаем</h2>
+    <p class="section-sub">Каждый материал — для своих условий эксплуатации</p>
+    <div class="mat-grid">
+      <div class="mat-card fade-in">
+        <div class="mat-head mat-head-zinc">
+          <div class="mat-icon-wrap">🔷</div>
+          <div>
+            <h4>Оцинкованная сталь</h4>
+            <p>Основной материал для общепромышленной вентиляции</p>
+          </div>
+        </div>
+        <div class="mat-body">
+          <ul class="mat-list">
+            <li>Толщина стенки 0.5–1.2 мм (по ГОСТ 14918)</li>
+            <li>Антикоррозионное цинковое покрытие</li>
+            <li>Рабочая температура до +80°С</li>
+            <li>Прямоугольные и круглые воздуховоды</li>
+            <li>Все виды фасонных изделий</li>
+            <li>Идеально для жилых и коммерческих объектов</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mat-card fade-in">
+        <div class="mat-head mat-head-inox">
+          <div class="mat-icon-wrap">⬜</div>
+          <div>
+            <h4>Нержавеющая сталь</h4>
+            <p>Для агрессивных сред и пищевых производств</p>
+          </div>
+        </div>
+        <div class="mat-body">
+          <ul class="mat-list">
+            <li>AISI 304 и AISI 316 (кислотостойкая)</li>
+            <li>Толщина 0.5–2.0 мм</li>
+            <li>Рабочая температура до +300°С</li>
+            <li>Пищевые предприятия, фармацевтика, медицина</li>
+            <li>Помещения с повышенной влажностью</li>
+            <li>Химически агрессивные среды</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mat-card fade-in">
+        <div class="mat-head mat-head-black">
+          <div class="mat-icon-wrap">⬛</div>
+          <div>
+            <h4>Чёрная (углеродистая) сталь</h4>
+            <p>Системы дымоудаления и огнезащиты</p>
+          </div>
+        </div>
+        <div class="mat-body">
+          <ul class="mat-list">
+            <li>Толщина стенки 1.2–3.0 мм</li>
+            <li>С огнезащитным покрытием (класс П)</li>
+            <li>Выдерживает 900°С / 120 минут</li>
+            <li>Системы дымоудаления в ТЦ, ЖК, БЦ</li>
+            <li>Высокая механическая прочность</li>
+            <li>Сертификаты пожарной безопасности</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW WE WORK ── -->
+<section id="how" class="section">
+  <div class="container">
+    <div class="section-label" style="color:rgba(100,160,255,.8)">Процесс работы</div>
+    <h2 class="section-title">Как оформить заказ</h2>
+    <p class="section-sub">От заявки до отгрузки — понятно и быстро</p>
+    <div class="steps-grid fade-in">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h4>Заявка или спецификация</h4>
+        <p>Отправьте список позиций в мессенджер, на email или через форму на сайте</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h4>Счёт за 30 минут</h4>
+        <p>Менеджер проверит наличие, при необходимости предложит аналог и выставит счёт</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h4>Оплата удобным способом</h4>
+        <p>Наличные, безналичный расчёт, электронный перевод. Постоплата для партнёров</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h4>Сборка и проверка</h4>
+        <p>Комплектуем заказ на складе, проверяем по спецификации и упаковываем</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">5</div>
+        <h4>Доставка или самовывоз</h4>
+        <p>Доставляем по Москве/МО или отправляем транспортной компанией по России</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DELIVERY ── -->
+<section id="delivery" class="section">
+  <div class="container">
+    <div class="section-label">Логистика</div>
+    <h2 class="section-title">Доставка и самовывоз</h2>
+    <p class="section-sub">Работаем с частными лицами, монтажными бригадами и застройщиками</p>
+    <div class="del-grid">
+      <div class="del-card fade-in">
+        <span class="del-icon">🚚</span>
+        <h4>Доставка по Москве и МО</h4>
+        <p>Собственный автопарк — газели и еврофуры. Заявка до 14:00 — доставка на <strong>следующий день</strong>. Стоимость — от 1 500 ₽ в зависимости от объёма и адреса.</p>
+      </div>
+      <div class="del-card fade-in">
+        <span class="del-icon">🏭</span>
+        <h4>Самовывоз со склада</h4>
+        <p>Адрес: <strong>г. Троицк, мкр. В, д. 57</strong>. Ежедневно с 8:00 до 18:00. Погрузка включена. Принимаем легковые, газели, фуры. Предварительный звонок обязателен.</p>
+      </div>
+      <div class="del-card fade-in">
+        <span class="del-icon">📦</span>
+        <h4>Отправка по России</h4>
+        <p>Работаем с СДЭК, Деловые Линии, ПЭК и другими ТК. Упаковка в плёнку и обрешётку включена. Помогаем оформить накладную и отследить груз.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── REVIEWS ── -->
+<section id="reviews" class="section">
+  <div class="container">
+    <div class="section-label">Отзывы</div>
+    <h2 class="section-title">Что говорят клиенты</h2>
+    <p class="section-sub">Отзывы с Яндекс.Карт и 2ГИС</p>
+    <div class="rev-grid">
+      <div class="rev-card fade-in">
+        <div class="rev-quote">"</div>
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">Работаем с Юнигруп как субподрядчики уже третий год. Всегда нужные типоразмеры в наличии, отгрузка быстрая, документы оформляют правильно. Счёт получаем в течение получаса. Рекомендую для монтажных бригад.</p>
+        <div class="rev-author">
+          <div class="rev-ava">АК</div>
+          <div>
+            <div class="rev-name">Андрей Климов</div>
+            <div class="rev-meta">ООО «ВентСтрой», Москва · Яндекс.Карты</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card fade-in">
+        <div class="rev-quote">"</div>
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">Заказывали нестандартные прямоугольные воздуховоды под чертёж — 14 типоразмеров. Изготовили за 4 дня, всё точно по размерам. Качество шовного соединения отличное, геометрия выдержана. Цена ниже, чем у двух других поставщиков.</p>
+        <div class="rev-author">
+          <div class="rev-ava">МР</div>
+          <div>
+            <div class="rev-name">Михаил Рубцов</div>
+            <div class="rev-meta">Строительная компания, Подольск · 2ГИС</div>
+          </div>
+        </div>
+      </div>
+      <div class="rev-card fade-in">
+        <div class="rev-quote">"</div>
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">Покупаю для частного дома. Помогли подобрать всё под мой проект прямо по телефону — инженер объяснил, какие размеры нужны. Самовывоз из Троицка, погрузили быстро. Приеду за вторым заказом через месяц.</p>
+        <div class="rev-author">
+          <div class="rev-ava">ИС</div>
+          <div>
+            <div class="rev-name">Игорь Соколов</div>
+            <div class="rev-meta">Частное лицо, Троицк · Яндекс.Карты</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq" class="section">
+  <div class="container">
+    <div class="section-label">Часто спрашивают</div>
+    <h2 class="section-title">FAQ</h2>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Есть ли минимальный заказ?<div class="faq-arrow">+</div></div>
+        <div class="faq-a">Минимального заказа нет — работаем и с розничными покупателями (1 шт.), и с крупными организациями. Оптовые скидки: 5% от 50 000 ₽, 10% от 150 000 ₽, 15–25% для постоянных партнёров.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Можно ли заказать воздуховоды нестандартного размера?<div class="faq-arrow">+</div></div>
+        <div class="faq-a">Да — изготавливаем по вашим чертежам или эскизам. Материалы: оцинкованная сталь, нержавеющая AISI 304/316, чёрная сталь. Срок — от 3 рабочих дней. Пришлите чертёж на svarog16@bk.ru или в WhatsApp — рассчитаем стоимость.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Предоставляете ли сертификаты на продукцию?<div class="faq-arrow">+</div></div>
+        <div class="faq-a">Да. На всю продукцию предоставляем сертификаты соответствия ГОСТ, декларации и паспорта изделий. При необходимости — протоколы испытаний и пожарные сертификаты на системы дымоудаления.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Как получить полный прайс-лист?<div class="faq-arrow">+</div></div>
+        <div class="faq-a">Отправьте запрос через форму на сайте, в WhatsApp или на email svarog16@bk.ru — пришлём Excel-прайс в течение 15 минут. Если есть спецификация — сделаем смету с актуальными ценами и скидками.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Работаете ли вы с НДС и юридическими лицами?<div class="faq-arrow">+</div></div>
+        <div class="faq-a">Да, ООО «Юнигруп» работает на ОСНО, НДС 20%. Полный комплект документов: договор поставки, счёт, ТОРГ-12, счёт-фактура, УПД. Постоплата возможна для партнёров с историей сотрудничества.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Как быстро отгружают заказ?<div class="faq-arrow">+</div></div>
+        <div class="faq-a">Типовые позиции — заявка до 14:00, отгрузка в тот же день. Нестандартные позиции со склада — 1–2 дня. Изготовление по чертежу — от 3 рабочих дней. Доставка по Москве/МО — на следующий день.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BAND ── -->
+<div class="cta-band">
+  <div class="container">
+    <h2>Нужна спецификация или расчёт?</h2>
+    <p>Пришлите проект — подберём позиции и выставим смету за 30 минут</p>
+    <div class="cta-btns">
+      <a href="#contact" class="btn btn-white">Оставить заявку →</a>
+      <a href="tel:+79128324944" class="btn btn-ghost">+7 (912) 832-49-44</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONTACT FORM ── -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="section-label">Контакты</div>
+    <h2 class="section-title">Получить прайс и смету</h2>
+    <div class="contact-layout">
+
+      <div class="form-card">
+        <h3>Оставьте заявку</h3>
+        <p class="sub">Ответим в течение 15 минут в рабочее время и пришлём актуальный прайс-лист</p>
+        <form onsubmit="submitForm(event)">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="fl">Ваше имя *</label>
+              <input class="fi" type="text" placeholder="Иван Иванов" required>
+            </div>
+            <div class="form-group">
+              <label class="fl">Телефон *</label>
+              <input class="fi" type="tel" placeholder="+7 (___) ___-__-__" required>
+            </div>
+            <div class="form-group">
+              <label class="fl">Email</label>
+              <input class="fi" type="email" placeholder="ivan@company.ru">
+            </div>
+            <div class="form-group">
+              <label class="fl">Тип запроса</label>
+              <select class="fi">
+                <option value="" disabled selected>Выберите...</option>
+                <option>Нужен прайс-лист</option>
+                <option>Есть спецификация / чертёж</option>
+                <option>Оптовое сотрудничество</option>
+                <option>Нестандартный заказ</option>
+                <option>Другое</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="fl">Организация</label>
+              <input class="fi" type="text" placeholder="ООО «Название»">
+            </div>
+            <div class="form-group">
+              <label class="fl">Удобный мессенджер</label>
+              <select class="fi">
+                <option value="" disabled selected>Выберите...</option>
+                <option>WhatsApp</option>
+                <option>Telegram</option>
+                <option>Только телефон</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label class="fl">Комментарий / список позиций</label>
+              <textarea class="fi" rows="4" placeholder="Опишите, что нужно. Можно указать размеры и количество воздуховодов..."></textarea>
+            </div>
+          </div>
+          <p class="form-agree" style="margin:12px 0 16px">Нажимая «Отправить», вы соглашаетесь с политикой обработки персональных данных</p>
+          <button type="submit" class="btn btn-blue form-submit" style="width:100%;justify-content:center;padding:16px">Отправить заявку →</button>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <h3>Свяжитесь с нами</h3>
+        <p class="sub">Работаем пн–пт с 8:00 до 19:00, сб — с 9:00 до 16:00</p>
+        <div class="ci-blocks">
+          <div class="ci-block">
+            <div class="ci-icon">📞</div>
+            <div>
+              <div class="ci-label">Телефон</div>
+              <div class="ci-val"><a href="tel:+79128324944">+7 (912) 832-49-44</a></div>
+              <div class="ci-note">пн–пт 8:00–19:00, сб 9:00–16:00</div>
+            </div>
+          </div>
+          <div class="ci-block">
+            <div class="ci-icon">✉️</div>
+            <div>
+              <div class="ci-label">Email</div>
+              <div class="ci-val"><a href="mailto:svarog16@bk.ru">svarog16@bk.ru</a></div>
+              <div class="ci-note">Отвечаем в течение 30 минут</div>
+            </div>
+          </div>
+          <div class="ci-block">
+            <div class="ci-icon">📍</div>
+            <div>
+              <div class="ci-label">Склад и самовывоз</div>
+              <div class="ci-val">г. Троицк, мкр. В, д. 57</div>
+              <div class="ci-note">Ежедневно 8:00–18:00 · Погрузка включена</div>
+            </div>
+          </div>
+        </div>
+        <div class="msg-row">
+          <a href="https://wa.me/79128324944" class="msg-btn msg-wa">💬 WhatsApp</a>
+          <a href="https://t.me/+79128324944" class="msg-btn msg-tg">✈️ Telegram</a>
+        </div>
+        <div class="req-block">
+          <div class="req-title">Реквизиты</div>
+          <div class="req-lines">
+            ООО «Юнигруп»<br>
+            ИНН: 7751269262<br>
+            Режим налогообложения: ОСНО, НДС 20%
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <a class="footer-logo" href="#hero">ЮНИ<span>ГРУП</span></a>
+    <p class="footer-copy">© 2026 ООО «Юнигруп» · Воздуховоды и вентиляционное оборудование, Троицк</p>
+    <p class="footer-inn">ИНН 7751269262</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast">✓ Заявка принята! Ответим в течение 15 минут.</div>
+
+<script>
+// ── NAV SCROLL ──
+window.addEventListener('scroll',()=>{
+  document.getElementById('header').classList.toggle('scrolled',scrollY>20)
+})
+
+// ── CALCULATOR ──
+const rectPrices  = {100:180,125:200,160:240,200:280,250:340,315:420,400:540,500:750,630:980,800:1380,1000:1850,1250:2600,1600:3400}
+const rectSel = [
+  {v:'100x150',p:320,n:'Прямоуг. 100×150'},
+  {v:'150x150',p:380,n:'Прямоуг. 150×150'},
+  {v:'200x100',p:360,n:'Прямоуг. 200×100'},
+  {v:'200x200',p:480,n:'Прямоуг. 200×200'},
+  {v:'250x250',p:580,n:'Прямоуг. 250×250'},
+  {v:'300x200',p:620,n:'Прямоуг. 300×200'},
+  {v:'300x300',p:740,n:'Прямоуг. 300×300'},
+  {v:'400x200',p:720,n:'Прямоуг. 400×200'},
+  {v:'400x300',p:870,n:'Прямоуг. 400×300'},
+  {v:'400x400',p:980,n:'Прямоуг. 400×400'},
+  {v:'500x300',p:960,n:'Прямоуг. 500×300'},
+  {v:'500x500',p:1240,n:'Прямоуг. 500×500'},
+  {v:'600x400',p:1350,n:'Прямоуг. 600×400'},
+  {v:'800x500',p:1850,n:'Прямоуг. 800×500'},
+  {v:'1000x500',p:2200,n:'Прямоуг. 1000×500'},
+]
+const roundSel = [
+  {v:'d100',p:180,n:'Круглый Ø100'},{v:'d125',p:200,n:'Круглый Ø125'},{v:'d160',p:240,n:'Круглый Ø160'},
+  {v:'d200',p:280,n:'Круглый Ø200'},{v:'d250',p:340,n:'Круглый Ø250'},{v:'d315',p:420,n:'Круглый Ø315'},
+  {v:'d400',p:540,n:'Круглый Ø400'},{v:'d500',p:750,n:'Круглый Ø500'},{v:'d630',p:980,n:'Круглый Ø630'},
+  {v:'d800',p:1380,n:'Круглый Ø800'},{v:'d1000',p:1850,n:'Круглый Ø1000'},{v:'d1250',p:2600,n:'Круглый Ø1250'},{v:'d1600',p:3400,n:'Круглый Ø1600'},
+]
+const flexSel = [
+  {v:'f100',p:95,n:'Гибкий Ø100 ПВХ'},{v:'f125',p:110,n:'Гибкий Ø125 ПВХ'},{v:'f160',p:140,n:'Гибкий Ø160 ПВХ'},
+  {v:'f200',p:175,n:'Гибкий Ø200 ПВХ'},{v:'f250',p:220,n:'Гибкий Ø250 ПВХ'},{v:'f315',p:280,n:'Гибкий Ø315 ПВХ'},
+  {v:'fi125',p:195,n:'Гибкий Ø125 утепл.'},{v:'fi160',p:240,n:'Гибкий Ø160 утепл.'},{v:'fi200',p:300,n:'Гибкий Ø200 утепл.'},{v:'fi250',p:380,n:'Гибкий Ø250 утепл.'},
+]
+const fasonSel = [
+  {v:'o90r200',p:280,n:'Отвод 90° Ø200'},{v:'o90r160',p:220,n:'Отвод 90° Ø160'},{v:'o90r315',p:380,n:'Отвод 90° Ø315'},
+  {v:'tee200',p:420,n:'Тройник Ø200'},{v:'tee160',p:350,n:'Тройник Ø160'},{v:'tr200x160',p:320,n:'Переход Ø200/160'},
+  {v:'rect_o200',p:480,n:'Отвод прям. 200×200'},{v:'rect_t200',p:650,n:'Тройник прям. 200×200'},
+  {v:'grille150',p:180,n:'Решётка 150×150'},{v:'grille200',p:240,n:'Решётка 200×200'},
+  {v:'diff160',p:420,n:'Диффузор Ø160'},{v:'diff200',p:540,n:'Диффузор 595×595'},
+  {v:'valv160',p:680,n:'Клапан обр. Ø160'},{v:'ppk200',p:3400,n:'Клапан ПП 200×200'},{v:'silencer',p:2800,n:'Шумоглушитель Ø200'},
+]
+
+function makeSelect(items,defaultIdx,id){
+  const s=document.createElement('select')
+  s.className='calc-select'
+  s.onchange=recalc
+  items.forEach((it,i)=>{
+    const o=document.createElement('option')
+    o.value=it.v
+    o.dataset.p=it.p
+    o.textContent=it.n
+    if(i===defaultIdx)o.selected=true
+    s.appendChild(o)
+  })
+  return s
+}
+function makeNumInput(val){
+  const inp=document.createElement('input')
+  inp.type='number';inp.className='calc-input';inp.value=val;inp.min=1
+  inp.oninput=inp.onchange=recalc
+  return inp
+}
+
+function addRow(type, bodyId){
+  const tbody=document.getElementById(bodyId)
+  const tr=document.createElement('tr')
+  tr.dataset.type=type
+  const selMap={rect:rectSel,round:roundSel,flex:flexSel,fason:fasonSel}
+  const sel=makeSelect(selMap[type],0)
+  const td1=document.createElement('td');td1.appendChild(sel)
+  const td2=document.createElement('td')
+  const td3=document.createElement('td')
+  const delbtn=document.createElement('button');delbtn.className='calc-del-btn';delbtn.textContent='×';delbtn.title='Удалить'
+  delbtn.onclick=function(){delRow(this)}
+  const td4=document.createElement('td');td4.appendChild(delbtn)
+  if(type==='fason'){
+    const qinp=makeNumInput(1)
+    td2.colSpan=2;td2.appendChild(qinp)
+    tr.append(td1,td2,td4)
+  } else {
+    td2.appendChild(makeNumInput(3))
+    td3.appendChild(makeNumInput(1))
+    tr.append(td1,td2,td3,td4)
+  }
+  tbody.appendChild(tr)
+  recalc()
+}
+
+function delRow(btn){
+  const tr=btn.closest('tr')
+  if(tr.parentElement.children.length===1)return // keep at least 1
+  tr.remove();recalc()
+}
+
+function getPrice(sel){
+  const opt=sel.options[sel.selectedIndex]
+  return parseInt(opt.dataset.p)||0
+}
+function getName(sel){
+  return sel.options[sel.selectedIndex].textContent
+}
+
+function recalc(){
+  const lines=[]
+  let total=0
+  // rect
+  document.querySelectorAll('#rect-body tr').forEach(tr=>{
+    const sel=tr.querySelector('select')
+    const tds=tr.querySelectorAll('input')
+    if(!sel||tds.length<2)return
+    const len=parseFloat(tds[0].value)||0
+    const qty=parseFloat(tds[1].value)||0
+    const p=getPrice(sel)
+    const sub=p*len*qty
+    if(sub>0){lines.push({n:getName(sel)+' '+len+'пм ×'+qty,v:sub});total+=sub}
+  })
+  // round
+  document.querySelectorAll('#round-body tr').forEach(tr=>{
+    const sel=tr.querySelector('select')
+    const tds=tr.querySelectorAll('input')
+    if(!sel||tds.length<2)return
+    const len=parseFloat(tds[0].value)||0
+    const qty=parseFloat(tds[1].value)||0
+    const p=getPrice(sel)
+    const sub=p*len*qty
+    if(sub>0){lines.push({n:getName(sel)+' '+len+'пм ×'+qty,v:sub});total+=sub}
+  })
+  // flex
+  document.querySelectorAll('#flex-body tr').forEach(tr=>{
+    const sel=tr.querySelector('select')
+    const tds=tr.querySelectorAll('input')
+    if(!sel||tds.length<2)return
+    const len=parseFloat(tds[0].value)||0
+    const qty=parseFloat(tds[1].value)||0
+    const p=getPrice(sel)
+    const sub=p*len*qty
+    if(sub>0){lines.push({n:getName(sel)+' '+len+'пм ×'+qty,v:sub});total+=sub}
+  })
+  // fason
+  document.querySelectorAll('#fason-body tr').forEach(tr=>{
+    const sel=tr.querySelector('select')
+    const inp=tr.querySelector('input')
+    if(!sel||!inp)return
+    const qty=parseFloat(inp.value)||0
+    const p=getPrice(sel)
+    const sub=p*qty
+    if(sub>0){lines.push({n:getName(sel)+' ×'+qty+' шт',v:sub});total+=sub}
+  })
+
+  const rl=document.getElementById('result-lines')
+  const rt=document.getElementById('result-total')
+  if(lines.length===0){
+    rl.innerHTML='<div class="result-line"><span class="rl-name">Добавьте позиции в таблицу</span><span class="rl-val">—</span></div>'
+    rt.innerHTML='<span>—</span>'
+    return
+  }
+  rl.innerHTML=lines.map(l=>`<div class="result-line"><span class="rl-name">${l.n}</span><span class="rl-val">${l.v.toLocaleString('ru')} ₽</span></div>`).join('')
+  rt.innerHTML=total.toLocaleString('ru-RU')+' <span>₽</span>'
+}
+recalc()
+
+// ── FAQ ──
+function toggleFaq(q){
+  const item=q.parentElement
+  document.querySelectorAll('.faq-item').forEach(i=>{if(i!==item)i.classList.remove('open')})
+  item.classList.toggle('open')
+}
+
+// ── FORM ──
+function submitForm(e){
+  e.preventDefault()
+  const t=document.getElementById('toast')
+  t.classList.add('show')
+  setTimeout(()=>t.classList.remove('show'),4500)
+  e.target.reset()
+}
+
+// ── SCROLL ANIMATIONS ──
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})
+},{threshold:.12})
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el))
+</script>
+</body>
+</html>
