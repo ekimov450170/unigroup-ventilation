@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Политика конфиденциальности | Лаборатория вентиляции</title>
+<meta name="description" content="Политика конфиденциальности и обработки персональных данных ООО «Юнигруп» (vntlab.ru) в соответствии с ФЗ-152.">
+<link rel="canonical" href="https://vntlab.ru/privacy.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:#1a1a2e;background:#fff;line-height:1.7;font-size:15px}
+:root{--blue:#1952e8;--ink:#0f1523;--ink2:#3a4060;--steel:#f4f6fb;--border:#e2e6f0;--gray:#64748b}
+
+/* NAV */
+header{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav{max-width:1200px;margin:0 auto;padding:0 32px;height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Unbounded',sans-serif;font-size:18px;font-weight:900;color:var(--ink);text-decoration:none;letter-spacing:-1px}
+.logo span{color:var(--blue)}
+.nav-back{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--blue);text-decoration:none;padding:8px 16px;border:1.5px solid var(--blue);border-radius:6px;transition:all .2s}
+.nav-back:hover{background:var(--blue);color:#fff}
+
+/* LAYOUT */
+.page-wrap{max-width:800px;margin:0 auto;padding:100px 32px 80px}
+
+/* HERO */
+.doc-hero{margin-bottom:48px;padding-bottom:32px;border-bottom:2px solid var(--border)}
+.doc-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.doc-title{font-family:'Unbounded',sans-serif;font-size:clamp(24px,4vw,38px);font-weight:900;color:var(--ink);line-height:1.1;margin-bottom:16px;letter-spacing:-0.5px}
+.doc-meta{display:flex;gap:24px;flex-wrap:wrap}
+.doc-meta span{font-size:13px;color:var(--gray)}
+.doc-meta strong{color:var(--ink)}
+
+/* TOC */
+.toc{background:var(--steel);border-radius:12px;padding:24px 28px;margin-bottom:40px;border:1px solid var(--border)}
+.toc-title{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:14px;letter-spacing:.5px;text-transform:uppercase}
+.toc ol{padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.toc li a{font-size:13px;color:var(--blue);text-decoration:none;transition:opacity .2s}
+.toc li a:hover{opacity:.7;text-decoration:underline}
+
+/* SECTIONS */
+.doc-section{margin-bottom:40px;scroll-margin-top:90px}
+.doc-section h2{font-family:'Unbounded',sans-serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border);line-height:1.3}
+.doc-section h3{font-size:15px;font-weight:700;color:var(--ink);margin:20px 0 10px}
+.doc-section p{color:var(--ink2);margin-bottom:12px}
+.doc-section ul,.doc-section ol{padding-left:22px;color:var(--ink2);margin-bottom:12px}
+.doc-section li{margin-bottom:6px}
+.doc-section a{color:var(--blue);text-decoration:none}
+.doc-section a:hover{text-decoration:underline}
+
+.highlight-box{background:var(--steel);border-left:4px solid var(--blue);border-radius:0 8px 8px 0;padding:16px 20px;margin:16px 0;font-size:14px;color:var(--ink2)}
+.highlight-box strong{color:var(--blue)}
+.warn-box{background:#fff8f0;border-left:4px solid #f59e0b;border-radius:0 8px 8px 0;padding:16px 20px;margin:16px 0;font-size:14px;color:#92400e}
+
+/* TABLE */
+.doc-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px}
+.doc-table th{background:var(--ink);color:#fff;padding:10px 14px;text-align:left;font-size:12px;font-weight:600}
+.doc-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--ink2);vertical-align:top}
+.doc-table tr:nth-child(even) td{background:var(--steel)}
+
+/* CONSENT MODAL */
+.consent-banner{
+  position:fixed;bottom:0;left:0;right:0;z-index:9999;
+  background:#fff;
+  border-top:2px solid var(--border);
+  padding:20px 32px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  box-shadow:0 -4px 24px rgba(0,0,0,.1);
+  flex-wrap:wrap;
+}
+.consent-text{font-size:13px;color:var(--ink2);line-height:1.5;flex:1;min-width:260px}
+.consent-text a{color:var(--blue)}
+.consent-btns{display:flex;gap:10px;flex-shrink:0}
+.btn-accept{background:var(--blue);color:#fff;border:none;padding:10px 24px;border-radius:6px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:background .2s}
+.btn-accept:hover{background:#0e3bbf}
+.btn-decline{background:transparent;color:var(--gray);border:1.5px solid var(--border);padding:10px 18px;border-radius:6px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s}
+.btn-decline:hover{border-color:var(--gray)}
+
+/* FOOTER */
+footer{background:#0f1523;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:0}
+.footer-logo{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:900;color:#fff;text-decoration:none}
+.footer-logo span{color:var(--blue)}
+footer p{font-size:12px;color:rgba(255,255,255,.3)}
+
+@media(max-width:600px){
+  .page-wrap{padding:88px 16px 64px}
+  .nav{padding:0 16px;height:60px}
+  .logo{font-size:14px}
+  .consent-banner{padding:16px}
+  .doc-meta{flex-direction:column;gap:6px}
+  footer{padding:20px 16px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="index.html">Лаборатория <span>вентиляции</span></a>
+    <a class="nav-back" href="index.html">← На главную</a>
+  </nav>
+</header>
+
+<div class="page-wrap">
+
+  <div class="doc-hero">
+    <div class="doc-label">Юридический документ</div>
+    <h1 class="doc-title">Политика конфиденциальности и обработки персональных данных</h1>
+    <div class="doc-meta">
+      <span>Оператор: <strong>ООО «Юнигруп»</strong></span>
+      <span>ИНН: <strong>7751269262</strong></span>
+      <span>Редакция от: <strong>08.06.2026</strong></span>
+    </div>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-title">Содержание</div>
+    <ol>
+      <li><a href="#s1">Общие положения</a></li>
+      <li><a href="#s2">Оператор персональных данных</a></li>
+      <li><a href="#s3">Какие данные мы собираем</a></li>
+      <li><a href="#s4">Цели обработки персональных данных</a></li>
+      <li><a href="#s5">Правовые основания обработки</a></li>
+      <li><a href="#s6">Порядок и условия обработки</a></li>
+      <li><a href="#s7">Передача данных третьим лицам</a></li>
+      <li><a href="#s8">Cookies и аналитика</a></li>
+      <li><a href="#s9">Права субъекта персональных данных</a></li>
+      <li><a href="#s10">Защита персональных данных</a></li>
+      <li><a href="#s11">Срок хранения данных</a></li>
+      <li><a href="#s12">Трансграничная передача данных</a></li>
+      <li><a href="#s13">Изменение политики</a></li>
+      <li><a href="#s14">Контакты и обращения</a></li>
+    </ol>
+  </div>
+
+  <!-- 1 -->
+  <div class="doc-section" id="s1">
+    <h2>1. Общие положения</h2>
+    <p>Настоящая Политика конфиденциальности (далее — «Политика») определяет порядок обработки и защиты персональных данных физических лиц (далее — «Субъект» или «Пользователь»), которые предоставляют свои данные при использовании сайта <strong>vntlab.ru</strong> (далее — «Сайт»).</p>
+    <p>Политика разработана в соответствии с требованиями:</p>
+    <ul>
+      <li>Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных»</li>
+      <li>Постановления Правительства РФ от 01.11.2012 № 1119 «Об утверждении требований к защите ПД при их обработке»</li>
+      <li>Приказа ФСТЭК России от 18.02.2013 № 21</li>
+      <li>Требований Роскомнадзора к операторам персональных данных</li>
+    </ul>
+    <p>Использование Сайта означает безоговорочное согласие Пользователя с настоящей Политикой и указанными в ней условиями обработки персональных данных. Если Пользователь не согласен с условиями Политики, он должен прекратить использование Сайта.</p>
+    <div class="highlight-box"><strong>Важно:</strong> Оператор обрабатывает персональные данные только с согласия субъекта персональных данных, если иное не предусмотрено законодательством РФ.</div>
+  </div>
+
+  <!-- 2 -->
+  <div class="doc-section" id="s2">
+    <h2>2. Оператор персональных данных</h2>
+    <table class="doc-table">
+      <tr><th>Реквизит</th><th>Значение</th></tr>
+      <tr><td>Наименование</td><td>Общество с ограниченной ответственностью «Юнигруп»</td></tr>
+      <tr><td>Сокращённое наименование</td><td>ООО «Юнигруп»</td></tr>
+      <tr><td>ИНН</td><td>7751269262</td></tr>
+      <tr><td>Сайт</td><td><a href="https://vntlab.ru">vntlab.ru</a></td></tr>
+      <tr><td>Email для обращений по ПД</td><td><a href="mailto:svarog16@bk.ru">svarog16@bk.ru</a></td></tr>
+      <tr><td>Телефон</td><td>+7 (999) 099-98-08</td></tr>
+    </table>
+    <p>Оператор зарегистрирован в реестре операторов персональных данных Роскомнадзора и осуществляет обработку персональных данных в соответствии с законодательством РФ.</p>
+  </div>
+
+  <!-- 3 -->
+  <div class="doc-section" id="s3">
+    <h2>3. Какие данные мы собираем</h2>
+    <h3>3.1. Данные, предоставляемые пользователем добровольно</h3>
+    <p>При заполнении форм обратной связи, заявок или запросов на Сайте Пользователь предоставляет следующие данные:</p>
+    <ul>
+      <li>Имя и фамилия</li>
+      <li>Номер телефона</li>
+      <li>Адрес электронной почты</li>
+      <li>Наименование организации (необязательно)</li>
+      <li>Содержание обращения или комментарий</li>
+    </ul>
+    <h3>3.2. Данные, собираемые автоматически</h3>
+    <p>При посещении Сайта автоматически собираются технические данные:</p>
+    <ul>
+      <li>IP-адрес устройства</li>
+      <li>Тип и версия браузера</li>
+      <li>Операционная система</li>
+      <li>Реферальный URL (страница, с которой перешёл пользователь)</li>
+      <li>Дата и время посещения</li>
+      <li>Cookies (файлы куки)</li>
+    </ul>
+    <h3>3.3. Специальные категории данных</h3>
+    <p>Оператор <strong>не собирает и не обрабатывает</strong> специальные категории персональных данных: расовое и этническое происхождение, политические взгляды, религиозные убеждения, биометрические и генетические данные, данные о состоянии здоровья.</p>
+  </div>
+
+  <!-- 4 -->
+  <div class="doc-section" id="s4">
+    <h2>4. Цели обработки персональных данных</h2>
+    <table class="doc-table">
+      <tr><th>Цель обработки</th><th>Категория данных</th></tr>
+      <tr><td>Обработка заявок и обращений пользователей</td><td>Имя, телефон, email, текст обращения</td></tr>
+      <tr><td>Связь с пользователем по его запросу</td><td>Телефон, email</td></tr>
+      <tr><td>Заключение и исполнение договора поставки</td><td>Имя, телефон, email, организация</td></tr>
+      <tr><td>Направление коммерческих предложений и прайс-листов</td><td>Email, телефон</td></tr>
+      <tr><td>Улучшение работы Сайта и анализ посещаемости</td><td>IP-адрес, cookies, данные браузера</td></tr>
+      <tr><td>Выполнение требований законодательства РФ</td><td>Все категории в объёме, необходимом по закону</td></tr>
+    </table>
+    <div class="warn-box">Оператор не использует персональные данные для принятия автоматизированных решений, влекущих юридические последствия для Субъекта, без участия человека.</div>
+  </div>
+
+  <!-- 5 -->
+  <div class="doc-section" id="s5">
+    <h2>5. Правовые основания обработки</h2>
+    <p>Обработка персональных данных осуществляется на следующих правовых основаниях (ст. 6 ФЗ-152):</p>
+    <ul>
+      <li><strong>Согласие субъекта</strong> — при заполнении форм обратной связи и заявок на Сайте</li>
+      <li><strong>Исполнение договора</strong> — при заключении и исполнении договора поставки, в котором субъект является стороной</li>
+      <li><strong>Законные интересы оператора</strong> — для обработки технических данных в целях безопасности и улучшения Сайта</li>
+      <li><strong>Требования законодательства</strong> — в случаях, прямо предусмотренных законами РФ (налоговое законодательство, бухгалтерский учёт)</li>
+    </ul>
+  </div>
+
+  <!-- 6 -->
+  <div class="doc-section" id="s6">
+    <h2>6. Порядок и условия обработки</h2>
+    <p>Обработка персональных данных осуществляется следующими способами:</p>
+    <ul>
+      <li>Сбор, запись, систематизация, накопление</li>
+      <li>Хранение, уточнение (обновление, изменение)</li>
+      <li>Использование, передача (предоставление, доступ)</li>
+      <li>Обезличивание, блокирование, удаление, уничтожение</li>
+    </ul>
+    <p>Обработка данных осуществляется с использованием средств автоматизации и без их использования (смешанная обработка).</p>
+    <div class="highlight-box"><strong>Принципы обработки:</strong> данные обрабатываются только в объёме и с целями, заявленными при их сборе. Оператор не объединяет базы данных, обработка которых ведётся в несовместимых целях.</div>
+  </div>
+
+  <!-- 7 -->
+  <div class="doc-section" id="s7">
+    <h2>7. Передача данных третьим лицам</h2>
+    <p>Оператор не продаёт, не обменивает и не передаёт персональные данные третьим лицам без согласия субъекта, за исключением следующих случаев:</p>
+    <ul>
+      <li><strong>Сервисы обработки форм</strong> — для обработки заявок с Сайта используется сервис Formspree (США). Передача осуществляется с согласия Пользователя при отправке формы.</li>
+      <li><strong>Требования законодательства</strong> — передача данных по запросу уполномоченных органов государственной власти РФ в случаях, предусмотренных законом.</li>
+      <li><strong>Защита прав</strong> — при необходимости защиты прав и законных интересов Оператора в судебных и иных разбирательствах.</li>
+    </ul>
+    <p>Третьи лица, получающие персональные данные, обязаны соблюдать конфиденциальность и использовать их только в указанных целях.</p>
+  </div>
+
+  <!-- 8 -->
+  <div class="doc-section" id="s8">
+    <h2>8. Cookies и аналитика</h2>
+    <p>Сайт использует файлы cookies — небольшие текстовые файлы, сохраняемые на устройстве пользователя.</p>
+    <h3>Типы используемых cookies</h3>
+    <table class="doc-table">
+      <tr><th>Тип</th><th>Назначение</th><th>Срок</th></tr>
+      <tr><td>Технические (необходимые)</td><td>Обеспечение работы Сайта, сохранение настроек</td><td>Сессия</td></tr>
+      <tr><td>Аналитические</td><td>Анализ посещаемости и поведения пользователей</td><td>До 2 лет</td></tr>
+      <tr><td>Функциональные</td><td>Запоминание предпочтений пользователя</td><td>До 1 года</td></tr>
+    </table>
+    <p>Пользователь может отключить cookies в настройках браузера. Отключение технических cookies может повлиять на работу Сайта.</p>
+    <div class="highlight-box"><strong>Согласие на cookies:</strong> нажимая кнопку «Принять» во всплывающем уведомлении или продолжая использование Сайта, Пользователь соглашается на использование cookies в соответствии с настоящей Политикой.</div>
+  </div>
+
+  <!-- 9 -->
+  <div class="doc-section" id="s9">
+    <h2>9. Права субъекта персональных данных</h2>
+    <p>В соответствии с ФЗ-152 Пользователь имеет право:</p>
+    <ul>
+      <li><strong>Получить информацию</strong> о обработке своих персональных данных (ст. 14 ФЗ-152)</li>
+      <li><strong>Уточнить данные</strong> — потребовать исправления неточных или неполных данных</li>
+      <li><strong>Удалить данные</strong> — потребовать уничтожения данных при наличии законных оснований</li>
+      <li><strong>Отозвать согласие</strong> на обработку персональных данных в любое время</li>
+      <li><strong>Заблокировать данные</strong> — потребовать приостановления обработки при наличии оснований</li>
+      <li><strong>Обратиться в Роскомнадзор</strong> с жалобой в случае нарушения своих прав (pd.rkn.gov.ru)</li>
+    </ul>
+    <p>Для реализации прав направьте письменное обращение по адресу электронной почты <a href="mailto:svarog16@bk.ru">svarog16@bk.ru</a> с пометкой «Персональные данные». Ответ предоставляется в течение <strong>30 дней</strong> с момента получения обращения.</p>
+    <div class="warn-box">Отзыв согласия не влияет на законность обработки, осуществлённой на его основании до момента отзыва, а также на обработку данных по иным правовым основаниям (например, в рамках исполнения договора).</div>
+  </div>
+
+  <!-- 10 -->
+  <div class="doc-section" id="s10">
+    <h2>10. Защита персональных данных</h2>
+    <p>Оператор принимает необходимые правовые, организационные и технические меры для защиты персональных данных от неправомерного доступа, изменения, раскрытия или уничтожения:</p>
+    <ul>
+      <li>Передача данных осуществляется по защищённому протоколу HTTPS (TLS)</li>
+      <li>Доступ к персональным данным ограничен кругом уполномоченных лиц</li>
+      <li>Сотрудники, имеющие доступ к данным, ознакомлены с требованиями конфиденциальности</li>
+      <li>Регулярная оценка эффективности применяемых мер защиты</li>
+    </ul>
+  </div>
+
+  <!-- 11 -->
+  <div class="doc-section" id="s11">
+    <h2>11. Срок хранения данных</h2>
+    <p>Персональные данные хранятся в течение срока, необходимого для достижения цели обработки:</p>
+    <table class="doc-table">
+      <tr><th>Категория данных</th><th>Срок хранения</th></tr>
+      <tr><td>Данные из форм обратной связи</td><td>3 года с момента последнего обращения</td></tr>
+      <tr><td>Данные в рамках исполнения договора</td><td>5 лет после исполнения договора (требования НК РФ)</td></tr>
+      <tr><td>Технические данные (логи, cookies)</td><td>До 2 лет</td></tr>
+    </table>
+    <p>По истечении срока хранения персональные данные уничтожаются или обезличиваются, если иное не предусмотрено законодательством РФ.</p>
+  </div>
+
+  <!-- 12 -->
+  <div class="doc-section" id="s12">
+    <h2>12. Трансграничная передача данных</h2>
+    <p>В связи с использованием сервиса Formspree для обработки форм обратной связи, персональные данные пользователей могут передаваться на серверы, расположенные в США.</p>
+    <p>Передача осуществляется на основании согласия субъекта персональных данных (ст. 12 ФЗ-152). До начала трансграничной передачи Оператор обязан убедиться, что иностранное государство обеспечивает адекватную защиту прав субъектов.</p>
+    <p>Пользователь вправе отказаться от передачи данных за рубеж, не используя формы обратной связи и направляя обращения напрямую на email <a href="mailto:svarog16@bk.ru">svarog16@bk.ru</a> или по телефону +7 (999) 099-98-08.</p>
+  </div>
+
+  <!-- 13 -->
+  <div class="doc-section" id="s13">
+    <h2>13. Изменение политики</h2>
+    <p>Оператор оставляет за собой право вносить изменения в настоящую Политику. Новая редакция вступает в силу с момента её размещения на Сайте. Продолжение использования Сайта после внесения изменений означает согласие с новой редакцией Политики.</p>
+    <p>Актуальная версия Политики всегда доступна по адресу: <a href="https://vntlab.ru/privacy.html">vntlab.ru/privacy.html</a></p>
+    <p>Текущая редакция: <strong>08 июня 2026 г.</strong></p>
+  </div>
+
+  <!-- 14 -->
+  <div class="doc-section" id="s14">
+    <h2>14. Контакты и обращения по вопросам персональных данных</h2>
+    <p>По всем вопросам, связанным с обработкой персональных данных, обращайтесь к ответственному лицу:</p>
+    <table class="doc-table">
+      <tr><th>Способ связи</th><th>Реквизиты</th></tr>
+      <tr><td>Email</td><td><a href="mailto:svarog16@bk.ru">svarog16@bk.ru</a> (тема: «Персональные данные»)</td></tr>
+      <tr><td>Телефон</td><td>+7 (999) 099-98-08</td></tr>
+    </table>
+    <p>Для жалоб в надзорный орган: Федеральная служба по надзору в сфере связи, информационных технологий и массовых коммуникаций (Роскомнадзор) — <a href="https://pd.rkn.gov.ru" target="_blank" rel="noopener">pd.rkn.gov.ru</a></p>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<footer>
+  <a class="footer-logo" href="index.html">Лаборатория <span>вентиляции</span></a>
+  <p>© 2026 ООО «Юнигруп» · ИНН 7751269262</p>
+  <p><a href="privacy.html" style="color:rgba(255,255,255,.4);font-size:12px;text-decoration:none">Политика конфиденциальности</a></p>
+</footer>
+
+<!-- ── COOKIE CONSENT BANNER ── -->
+<div class="consent-banner" id="consent-banner">
+  <div class="consent-text">
+    Мы используем файлы <strong>cookie</strong> для улучшения работы сайта и анализа трафика. Нажимая «Принять», вы соглашаетесь на обработку ваших персональных данных согласно
+    <a href="privacy.html">Политике конфиденциальности</a>.
+  </div>
+  <div class="consent-btns">
+    <button class="btn-decline" onclick="declineCookies()">Только необходимые</button>
+    <button class="btn-accept" onclick="acceptCookies()">Принять все</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var consent = localStorage.getItem('cookie_consent');
+  if(consent) document.getElementById('consent-banner').style.display='none';
+})();
+function acceptCookies(){
+  localStorage.setItem('cookie_consent','all');
+  document.getElementById('consent-banner').style.display='none';
+}
+function declineCookies(){
+  localStorage.setItem('cookie_consent','necessary');
+  document.getElementById('consent-banner').style.display='none';
+}
+</script>
+
+</body>
+</html>
