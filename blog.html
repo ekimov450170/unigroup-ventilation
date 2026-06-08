@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Блог о вентиляции — статьи, советы, инструкции | Лаборатория вентиляции</title>
+<meta name="description" content="Полезные статьи о вентиляции, воздуховодах, монтаже и оборудовании. Советы экспертов Лаборатории вентиляции.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;900&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:#1a1a2e;background:#fff;overflow-x:hidden;line-height:1.6}
+:root{--ink:#0f1523;--ink2:#3a4060;--blue:#1952e8;--blue2:#0e3bbf;--ice:#eef3ff;--steel:#f4f6fb;--border:#e2e6f0;--white:#fff;--gray:#8090a8;--shadow:0 2px 20px rgba(20,40,100,.08);--shadow-lg:0 8px 48px rgba(20,40,100,.13)}
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+
+/* NAV */
+header{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav{max-width:1200px;margin:0 auto;padding:0 32px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font-family:'Unbounded',sans-serif;font-size:18px;font-weight:900;color:var(--ink);text-decoration:none;letter-spacing:-1px}
+.logo span{color:var(--blue)}
+.nav-back{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--blue);text-decoration:none;padding:8px 16px;border:1.5px solid var(--blue);border-radius:6px;transition:all .2s}
+.nav-back:hover{background:var(--blue);color:#fff}
+
+/* HERO */
+.blog-hero{padding:100px 0 56px;background:var(--steel);border-bottom:1px solid var(--border)}
+.blog-hero-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+.blog-hero-label::before{content:'';width:20px;height:2px;background:var(--blue)}
+.blog-hero h1{font-family:'Unbounded',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:900;color:var(--ink);margin-bottom:14px;letter-spacing:-1px}
+.blog-hero p{font-size:16px;color:var(--ink2);max-width:560px;line-height:1.7}
+
+/* FILTERS */
+.blog-filters{padding:24px 0;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:68px;z-index:100}
+.filters-inner{display:flex;gap:8px;flex-wrap:wrap}
+.filt{padding:8px 18px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;border:1.5px solid var(--border);background:#fff;color:var(--ink2);font-family:'Manrope',sans-serif;transition:all .2s}
+.filt.active,.filt:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+
+/* GRID */
+.blog-grid-section{padding:56px 0 96px}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.blog-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);transition:transform .22s,box-shadow .22s;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.blog-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.blog-card-img{height:180px;display:flex;align-items:center;justify-content:center;font-size:64px;position:relative;overflow:hidden;flex-shrink:0}
+.bc-blue{background:linear-gradient(135deg,#c8d8f8 0%,#8aaae8 100%)}
+.bc-steel{background:linear-gradient(135deg,#c8d4e0 0%,#8aa0b4 100%)}
+.bc-green{background:linear-gradient(135deg,#c8e8d8 0%,#7ab898 100%)}
+.bc-warm{background:linear-gradient(135deg,#f8e8c8 0%,#d4a870 100%)}
+.bc-red{background:linear-gradient(135deg,#f8d8d8 0%,#d47878 100%)}
+.bc-purple{background:linear-gradient(135deg,#e0d0f8 0%,#a888d8 100%)}
+.bc-dark{background:linear-gradient(135deg,#c8ccd8 0%,#6878a0 100%)}
+.bc-teal{background:linear-gradient(135deg,#c8ecf0 0%,#70b8c8 100%)}
+.bc-olive{background:linear-gradient(135deg,#dce8c8 0%,#98b870 100%)}
+.bc-orange{background:linear-gradient(135deg,#fce0c0 0%,#e09060 100%)}
+.bc-navy{background:linear-gradient(135deg,#c0c8e0 0%,#5868a8 100%)}
+.bc-mint{background:linear-gradient(135deg,#c8f0e4 0%,#68c8a4 100%)}
+.bc-rose{background:linear-gradient(135deg,#f8d8e8 0%,#d888a8 100%)}
+.card-cat{position:absolute;top:12px;left:12px;background:#fff;border-radius:100px;padding:4px 12px;font-size:11px;font-weight:700;color:var(--blue);letter-spacing:.5px}
+.card-read{position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);border-radius:100px;padding:3px 10px;font-size:11px;color:#fff;font-weight:600}
+.blog-card-body{padding:20px;flex:1;display:flex;flex-direction:column}
+.card-meta{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.card-date{font-size:11px;color:var(--gray)}
+.card-tag{font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--blue);background:var(--ice);padding:3px 8px;border-radius:4px}
+.card-title{font-family:'Unbounded',sans-serif;font-size:14px;font-weight:700;color:var(--ink);line-height:1.35;margin-bottom:8px}
+.card-excerpt{font-size:13px;color:var(--gray);line-height:1.6;flex:1}
+.card-footer{margin-top:14px;padding-top:14px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.card-link{font-size:12px;font-weight:700;color:var(--blue)}
+.card-views{font-size:11px;color:var(--gray)}
+
+/* ARTICLE */
+.article-wrap{display:none;max-width:800px;margin:0 auto;padding:40px 32px 96px}
+.article-wrap.open{display:block}
+.art-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--blue);cursor:pointer;margin-bottom:28px;background:none;border:none;font-family:'Manrope',sans-serif}
+.art-back:hover{text-decoration:underline}
+.art-cat{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.art-title{font-family:'Unbounded',sans-serif;font-size:clamp(22px,3.5vw,36px);font-weight:900;color:var(--ink);line-height:1.15;margin-bottom:16px;letter-spacing:-0.5px}
+.art-meta{display:flex;gap:16px;font-size:12px;color:var(--gray);margin-bottom:32px;flex-wrap:wrap}
+.art-hero-img{height:320px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:96px;margin-bottom:40px}
+.art-body{font-size:15px;line-height:1.85;color:var(--ink2)}
+.art-body h2{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;color:var(--ink);margin:40px 0 16px;letter-spacing:-.3px}
+.art-body h3{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:700;color:var(--ink);margin:28px 0 12px}
+.art-body p{margin-bottom:18px}
+.art-body ul,.art-body ol{padding-left:24px;margin-bottom:18px}
+.art-body li{margin-bottom:8px}
+.art-body strong{color:var(--ink);font-weight:700}
+.art-tip{background:var(--ice);border-left:4px solid var(--blue);border-radius:0 8px 8px 0;padding:16px 20px;margin:24px 0;font-size:14px;color:var(--ink2)}
+.art-tip strong{color:var(--blue)}
+.art-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:13px}
+.art-table th{background:var(--ink);color:#fff;padding:10px 14px;text-align:left;font-size:12px;font-weight:600;letter-spacing:.5px}
+.art-table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--ink2)}
+.art-table tr:nth-child(even) td{background:var(--steel)}
+.art-cta{background:linear-gradient(135deg,var(--blue),var(--blue2));border-radius:16px;padding:32px;text-align:center;margin-top:48px}
+.art-cta h3{font-family:'Unbounded',sans-serif;font-size:18px;color:#fff;margin-bottom:10px}
+.art-cta p{font-size:14px;color:rgba(255,255,255,.75);margin-bottom:20px}
+.art-cta a{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--blue);padding:12px 24px;border-radius:6px;font-weight:700;font-size:14px;text-decoration:none;transition:all .2s}
+.art-cta a:hover{background:var(--ice);transform:translateY(-2px)}
+
+/* FOOTER */
+.blog-footer{background:var(--ink);padding:28px 0}
+.blog-footer-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.blog-footer .logo{font-size:16px;color:#fff}
+
+/* RESPONSIVE */
+@media(max-width:900px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){
+  .container{padding:0 16px}
+  .blog-grid{grid-template-columns:1fr}
+  .nav{padding:0 16px;height:60px}
+  .logo{font-size:14px}
+  .article-wrap{padding:24px 16px 64px}
+  .art-hero-img{height:200px;font-size:64px}
+  .filters-inner{gap:6px}
+  .filt{font-size:12px;padding:6px 12px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="index.html">Лаборатория <span>вентиляции</span></a>
+    <a class="nav-back" href="index.html">← На главную</a>
+  </nav>
+</header>
+
+<!-- BLOG LIST -->
+<div id="blog-list">
+  <div class="blog-hero">
+    <div class="container">
+      <div class="blog-hero-label">База знаний</div>
+      <h1>Блог о вентиляции</h1>
+      <p>Полезные статьи, инструкции и советы экспертов — всё о воздуховодах, оборудовании, монтаже и нормах проектирования</p>
+    </div>
+  </div>
+
+  <div class="blog-filters">
+    <div class="container">
+      <div class="filters-inner">
+        <button class="filt active" onclick="filterCards('all',this)">Все статьи</button>
+        <button class="filt" onclick="filterCards('vozdukhovody',this)">Воздуховоды</button>
+        <button class="filt" onclick="filterCards('montazh',this)">Монтаж</button>
+        <button class="filt" onclick="filterCards('ventilyaciya',this)">Вентиляция</button>
+        <button class="filt" onclick="filterCards('kondicionirovanie',this)">Кондиционирование</button>
+        <button class="filt" onclick="filterCards('oborudovanie',this)">Оборудование</button>
+        <button class="filt" onclick="filterCards('normy',this)">Нормы и ГОСТ</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="blog-grid-section">
+    <div class="container">
+      <div class="blog-grid" id="blog-grid">
+
+        <a class="blog-card" data-cat="vozdukhovody" onclick="openArticle('art1');return false" href="#">
+          <div class="blog-card-img bc-blue"><span class="card-cat">Воздуховоды</span>📐<span class="card-read">8 мин</span></div>
+          <div class="blog-card-body">
+            <div class="card-meta"><span class="card-date">12 мая 2025</span><span class="card-tag">Воздуховоды</span></div>
+            <div class="card-title">Прямоугольные vs круглые воздуховоды: что выбрать для вашего объекта</div>
+            <div class="card-excerpt">Разбираем ключевые отличия, плюсы и минусы каждого типа. Когда стоит выбирать прямоугольное сечение, а когда круглое — с примерами реальных объектов.</div>
+            <div class="card-footer"><span class="card-link">Читать →</span><span class="card-views">👁 2 340</span></div>
+          </div>
+        </a>
+
+        <a class="blog-card" data-cat="montazh" onclick="openArticle('art2');return false" href="#">
+          <div class="blog-card-img bc-steel"><span class="card-cat">Монтаж</span>🔧<span class="card-read">10 мин</span></div>
+          <div class="blog-card-body">
+            <div class="card-meta"><span class="card-date">28 апреля 2025</span><span class="card-tag">Монтаж</span></div>
+            <div class="card-title">Монтаж воздуховодов своими руками: пошаговая инструкция</div>
+            <div class="card-excerpt">Как правильно собрать и закрепить систему воздуховодов самостоятельно. Инструменты, крепёж, герметизация стыков и типичные ошибки новичков.</div>
+            <div class="card-footer"><span class="card-link">Читать →</span><span class="card-views">👁 4 120</span></div>
+          </div>
+        </a>
+
+        <a class="blog-card" data-cat="ventilyaciya" onclick="openArticle('art3');return false" href="#">
+          <div class="blog-card-img bc-green"><span class="card-cat">Вентиляция</span>🏠<span class="card-read">7 мин</span></div>
+          <div class="blog-card-body">
+            <div class="card-meta"><span class="card-date">15 апреля 2025</span><span class="card-tag">Вентиляция</span></div>
+            <div class="card-title">Вентиляция в квартире: нормы воздухообмена и как их соблюсти</div>
+            <div class="card-excerpt">Сколько свежего воздуха нужно на одного человека, как рассчитать кратность воздухообмена и почему естественная вентиляция в современных домах не справляется.</div>
+            <div class="card-footer"><span class="card-link">Читать →</span><span class="card-views">👁 5 780</span></div>
+          </div>
+        </a>
+
+        <a class="blog-card" data-cat="kondicionirovanie" onclick="openArticle('art4');return false" href="#">
+          <div class="blog-card-img bc-teal"><span class="card-cat">Кондиционирование</span>❄️<span class="card-read">9 мин</span></div>
+          <div class="blog-card-body">
+            <div class="card-meta"><span class="card-date">3 апреля 2025</span><span class="card-tag">Кондиционирование</span></div>
+            <div class="card-title">Приточная вентиляция vs кондиционер: в чём разница и что нужно вашему офису</div>
+            <div class="card-excerpt">Объясняем на пальцах: кондиционер охлаждает, но не добавляет свежий воздух. Почему офисам нужны обе системы и как они работают вместе.</div>
+            <div class="card-footer"><span class="card-link">Читать →</span><span class="card-views">👁 3 890</span></div>
+          </div>
+        </a>
+
+        <a class="blog-card" data-cat="oborudovanie" onclick="openArticle('art5');return false" href="#">
+          <div class="blog-card-img bc-warm"><span class="card-cat">Оборудование</span>💨<span class="card-read">11 мин</span></div>
+          <div class="blog-card-body">
+            <div class="card-meta"><span class="card-date">22 марта 2025</span><span class="card-tag">Оборудование</span></div>
+            <div class="card-title">Как выбрать приточную установку: мощность, фильтры, производители</div>
+            <div class="card-excerpt">Полное руководство по выбору приточной вентиляционной установки. Разбираем производительность, типы нагрева, классы фильтрации и популярные бренды.</div>
+            <div class="card-footer"><span class="card-link">Читать →</span><span class="card-views">👁 3 210</span></div>
+          </div>
+        </a>
+
+        <a class="blog-card" data-cat="normy" onclick="openArticle('art6');return false" href="#">
+          <div class="blog-card-img bc-purple"><span class="card-cat">Нормы и ГОСТ</span>📋<span class="card-read">6 мин</span></div>
+          <div class="blog-card-body">
+            <div class="card-meta"><span class="card-date">10 марта 2025</span><span class="card-tag">Нормы и ГОСТ</span></div>
+            <div class="card-title">ГОСТ и СП на воздуховоды: что важно знать при покупке и монтаже</div>
+            <div class="card-excerpt">Какие нормативы регулируют производство и монтаж воздуховодов в России. СП 60.13330, ГОСТ 14918 и другие документы — простым языком.</div>
+            <div class="card-footer"><span class="card-link">Читать →</span><span class="card-views">👁 1 870</span></div>
+          </div>
+        </a>
+
+        <a class="blog-card" data-cat="vozdukhovody" onclick="openArticle('art7');return false" href="#">
+          <div class="blog-card-img bc-dark"><span class="card-cat">Воздуховоды</span>🔥<span class="card-read">8 мин</span></div>
+          <div class="blog-card-body">
+            <div class="card-meta"><span class="card-date">25 февраля 2025</span><span class="card-tag">Воздуховоды</span></div>
+            <div class="card-title">Воздуховоды для дымоудаления: требования, материалы, монтаж</div>
+            <div class="card-excerpt">Системы дымоудаления — отдельная категория воздуховодов с жёсткими требованиями к материалам и огнестойкости. Разбираем, что нужно знать застройщику и монтажнику.</div>
+            <div class="card-footer"><span class="card-link">Читать →</span><span class="card-views">👁 2 650</span></div>
+          </div>
+        </a>
+
+        <a class="blog-card" data-cat="ventilyaciya" onclick="openArticle('art8');return false" href="#">
+          <div class="blog-card-img bc-olive"><span class="card-cat">Вентиляция</span>🍽️<span class="card-read">9 мин</span></div>
+          <div class="blog-card-body">
+            <div class="card-meta"><span class="card-date">14 февраля 2025</span><span class="card-tag">Вентиляция</span></div>
+            <div class="card-title">Вентиляция ресторана и кухни: нормы, жироуловители, расчёт вытяжки</div>
+            <div class="card-excerpt">Ресторанная кухня — самый сложный объект для вентиляции. Рассказываем о нормах СанПиН, жироуловителях, компенсационном воздухе и типичных ошибках.</div>
+            <div class="card-footer"><span class="card-link">Читать →</span><span class="card-views">👁 4 430</span></div>
+          </div>
+        </a>
+
+        <a class="blog-card" data-cat="oborudovanie" onclick="openArticle('art9');return false" href="#">
+          <div class="blog-card-img bc-mint"><span class="card-cat">Оборудование</span>♻️<span class="card-read">7 мин</span></div>
+          <div class="blog-card-body">
+            <div class="card-meta"><span class="card-date">31 января 2025</span><span class="card-tag">Оборудование</span></div>
+            <div class="card-title">Рекуператор тепла: экономия до 80% на обогреве приточного воздуха</div>
+            <div class="card-excerpt">Как работает рекуперация тепла, какие типы рекуператоров бывают и когда они окупаются. Реальные расчёты экономии для квартиры и офиса.</div>
+            <div class="card-footer"><span class="card-link">Читать →</span><span class="card-views">👁 3 540</span></div>
+          </div>
+        </a>
+
+        <a class="blog-card" data-cat="montazh" onclick="openArticle('art10');return false" href="#">
+          <div class="blog-card-img bc-orange"><span class="card-cat">Монтаж</span>⚡<span class="card-read">5 мин</span></div>
+          <div class="blog-card-body">
+            <div class="card-meta"><span class="card-date">18 января 2025</span><span class="card-tag">Монтаж</span></div>
+            <div class="card-title">5 главных ошибок при монтаже воздуховодов — и как их избежать</div>
+            <div class="card-excerpt">Неправильный уклон, негерметичные стыки, неверный подбор сечения — разбираем типичные ошибки монтажников и их последствия для системы вентиляции.</div>
+            <div class="card-footer"><span class="card-link">Читать →</span><span class="card-views">👁 6 120</span></div>
+          </div>
+        </a>
+
+        <a class="blog-card" data-cat="vozdukhovody" onclick="openArticle('art11');return false" href="#">
+          <div class="blog-card-img bc-rose"><span class="card-cat">Воздуховоды</span>🔬<span class="card-read">6 мин</span></div>
+          <div class="blog-card-body">
+            <div class="card-meta"><span class="card-date">5 января 2025</span><span class="card-tag">Воздуховоды</span></div>
+            <div class="card-title">Нержавеющие воздуховоды AISI 304 vs AISI 316: в чём разница и когда нужна «кислотостойкая»</div>
+            <div class="card-excerpt">Пищевая промышленность, бассейны, химические производства — не везде подойдёт обычная нержавейка. Разбираем разницу марок и области применения.</div>
+            <div class="card-footer"><span class="card-link">Читать →</span><span class="card-views">👁 1 990</span></div>
+          </div>
+        </a>
+
+        <a class="blog-card" data-cat="kondicionirovanie" onclick="openArticle('art12');return false" href="#">
+          <div class="blog-card-img bc-navy"><span class="card-cat">Кондиционирование</span>🏢<span class="card-read">10 мин</span></div>
+          <div class="blog-card-body">
+            <div class="card-meta"><span class="card-date">20 декабря 2024</span><span class="card-tag">Кондиционирование</span></div>
+            <div class="card-title">VRF/VRV системы кондиционирования: что это и когда выгодно ставить</div>
+            <div class="card-excerpt">Мультизональные системы VRF — золотой стандарт для офисов и торговых центров. Объясняем принцип работы, плюсы перед обычными сплитами и стоимость монтажа.</div>
+            <div class="card-footer"><span class="card-link">Читать →</span><span class="card-views">👁 2 780</span></div>
+          </div>
+        </a>
+
+        <a class="blog-card" data-cat="normy" onclick="openArticle('art13');return false" href="#">
+          <div class="blog-card-img bc-blue"><span class="card-cat">Нормы и ГОСТ</span>📏<span class="card-read">8 мин</span></div>
+          <div class="blog-card-body">
+            <div class="card-meta"><span class="card-date">8 декабря 2024</span><span class="card-tag">Нормы и ГОСТ</span></div>
+            <div class="card-title">Толщина стенки воздуховода по ГОСТ: как проверить и почему это важно</div>
+            <div class="card-excerpt">Недобросовестные производители занижают толщину металла на 15–30%. Рассказываем, как проверить воздуховод при приёмке и на что смотреть в сопроводительных документах.</div>
+            <div class="card-footer"><span class="card-link">Читать →</span><span class="card-views">👁 3 100</span></div>
+          </div>
+        </a>
+
+        <a class="blog-card" data-cat="ventilyaciya" onclick="openArticle('art14');return false" href="#">
+          <div class="blog-card-img bc-warm"><span class="card-cat">Вентиляция</span>🏭<span class="card-read">12 мин</span></div>
+          <div class="blog-card-body">
+            <div class="card-meta"><span class="card-date">25 ноября 2024</span><span class="card-tag">Вентиляция</span></div>
+            <div class="card-title">Промышленная вентиляция: виды, расчёт кратности, выбор оборудования</div>
+            <div class="card-excerpt">Производственные помещения требуют особого подхода к вентиляции. Общеобменная, местная вытяжка, аспирация — когда что применять и как рассчитать производительность.</div>
+            <div class="card-footer"><span class="card-link">Читать →</span><span class="card-views">👁 2 430</span></div>
+          </div>
+        </a>
+
+        <a class="blog-card" data-cat="oborudovanie" onclick="openArticle('art15');return false" href="#">
+          <div class="blog-card-img bc-green"><span class="card-cat">Оборудование</span>🔇<span class="card-read">7 мин</span></div>
+          <div class="blog-card-body">
+            <div class="card-meta"><span class="card-date">12 ноября 2024</span><span class="card-tag">Оборудование</span></div>
+            <div class="card-title">Шумоглушители для вентиляции: когда нужны и как выбрать</div>
+            <div class="card-excerpt">Шум от вентиляции — частая проблема в жилых и офисных зданиях. Рассказываем о типах шумоглушителей, нормах акустики и правилах установки в систему воздуховодов.</div>
+            <div class="card-footer"><span class="card-link">Читать →</span><span class="card-views">👁 2 210</span></div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ARTICLES -->
+<div id="articles-container" style="padding-top:68px">
+
+  <!-- ART 1 -->
+  <div class="article-wrap" id="art1">
+    <div class="container">
+      <button class="art-back" onclick="closeArticle()">← Все статьи</button>
+      <div class="art-cat">Воздуховоды</div>
+      <h1 class="art-title">Прямоугольные vs круглые воздуховоды: что выбрать для вашего объекта</h1>
+      <div class="art-meta"><span>📅 12 мая 2025</span><span>⏱ 8 мин чтения</span><span>👁 2 340 просмотров</span></div>
+      <div class="art-hero-img bc-blue">📐</div>
+      <div class="art-body">
+        <p>Выбор между прямоугольными и круглыми воздуховодами — один из первых вопросов при проектировании системы вентиляции. Оба типа имеют свои сильные стороны, и правильный выбор зависит от конкретного объекта, бюджета и архитектурных ограничений.</p>
+        <h2>Прямоугольные воздуховоды</h2>
+        <p>Прямоугольные (или плоские) воздуховоды изготавливаются из листовой оцинкованной стали толщиной 0,5–1,2 мм. Главное преимущество — компактность: при той же площади сечения прямоугольный воздуховод занимает меньше высоты, что критично при ограниченном запотолочном пространстве.</p>
+        <div class="art-tip"><strong>Когда выбирать прямоугольные:</strong> офисы с подвесными потолками, торговые центры, рестораны — везде, где важна экономия высоты помещения.</div>
+        <h3>Преимущества прямоугольных воздуховодов</h3>
+        <ul>
+          <li>Меньшая строительная высота при том же сечении</li>
+          <li>Проще вписываются в архитектуру и дизайн</li>
+          <li>Легче крепить к балкам и перекрытиям</li>
+          <li>Широкий выбор типоразмеров от 100×150 до 1000×500 мм</li>
+        </ul>
+        <h3>Недостатки прямоугольных воздуховодов</h3>
+        <ul>
+          <li>Выше аэродинамическое сопротивление</li>
+          <li>Сложнее герметизировать угловые соединения</li>
+          <li>Больший расход металла на единицу площади сечения</li>
+        </ul>
+        <h2>Круглые воздуховоды</h2>
+        <p>Спирально-навивные круглые воздуховоды обладают лучшими аэродинамическими характеристиками. Круглое сечение обеспечивает равномерное распределение давления по всему периметру, что снижает сопротивление воздушному потоку и уровень шума.</p>
+        <table class="art-table">
+          <thead><tr><th>Параметр</th><th>Прямоугольные</th><th>Круглые</th></tr></thead>
+          <tbody>
+            <tr><td>Аэродинамика</td><td>Хорошая</td><td>Отличная</td></tr>
+            <tr><td>Строительная высота</td><td>Минимальная</td><td>Больше</td></tr>
+            <tr><td>Герметичность</td><td>Средняя</td><td>Высокая</td></tr>
+            <tr><td>Стоимость</td><td>Выше</td><td>Ниже</td></tr>
+            <tr><td>Монтаж</td><td>Сложнее</td><td>Проще</td></tr>
+          </tbody>
+        </table>
+        <h2>Практические рекомендации</h2>
+        <p>В большинстве проектов используется комбинация обоих типов: магистральные участки выполняются из прямоугольных воздуховодов (они проходят под балками перекрытий), а ответвления к диффузорам — из круглых или гибких воздуховодов.</p>
+        <div class="art-tip"><strong>Совет специалиста:</strong> при подборе сечения круглого воздуховода используйте формулу эквивалентного диаметра: d = 1,3 × (a × b)^0,625 / (a+b)^0,25, где a и b — стороны прямоугольного сечения.</div>
+        <div class="art-cta">
+          <h3>Нужны воздуховоды для вашего проекта?</h3>
+          <p>Поможем подобрать типоразмеры и рассчитаем стоимость</p>
+          <a href="index.html#contact">Получить консультацию →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ART 2 -->
+  <div class="article-wrap" id="art2">
+    <div class="container">
+      <button class="art-back" onclick="closeArticle()">← Все статьи</button>
+      <div class="art-cat">Монтаж</div>
+      <h1 class="art-title">Монтаж воздуховодов своими руками: пошаговая инструкция</h1>
+      <div class="art-meta"><span>📅 28 апреля 2025</span><span>⏱ 10 мин чтения</span><span>👁 4 120 просмотров</span></div>
+      <div class="art-hero-img bc-steel">🔧</div>
+      <div class="art-body">
+        <p>Монтаж воздуховодов в частном доме или квартире вполне по силам опытному мастеру. Главное — соблюдать последовательность работ, правила герметизации и нормативные требования к подвеске. В этой статье — подробная пошаговая инструкция.</p>
+        <h2>Инструменты и материалы</h2>
+        <p>Перед началом работ подготовьте всё необходимое:</p>
+        <ul>
+          <li>Ножницы по металлу или болгарка с диском по металлу</li>
+          <li>Дрель/шуруповёрт, сверло 4–6 мм</li>
+          <li>Уровень и рулетка</li>
+          <li>Алюминиевая самоклеящаяся лента шириной 50 мм</li>
+          <li>Хомуты, подвесы, шпильки М8</li>
+          <li>Силиконовый герметик нейтральный</li>
+          <li>Средства защиты: перчатки, очки</li>
+        </ul>
+        <h2>Шаг 1. Разметка трассы</h2>
+        <p>Нанесите трассу воздуховодов на стены и потолок карандашом или отбивочным шнуром. Соблюдайте минимальные расстояния: от стены — не менее 50 мм, от горячих поверхностей — не менее 100 мм. Разметьте точки крепления подвесов с шагом не более 1,5–2 м для прямоугольных и 3–4 м для круглых воздуховодов.</p>
+        <h2>Шаг 2. Установка подвесов</h2>
+        <p>Просверлите отверстия в перекрытии, установите дюбели М8 и вкрутите шпильки. Навесьте подвесы и выставьте их по уровню. Для гашения вибрации используйте виброизолирующие подвесы — они стоят немного дороже, но существенно снижают шум от работающей вентиляции.</p>
+        <div class="art-tip"><strong>Важно:</strong> нагрузка на один подвес не должна превышать 30 кг. Для тяжёлых воздуховодов (сечение от 500×500 мм) используйте траверсы с двумя точками крепления.</div>
+        <h2>Шаг 3. Сборка секций</h2>
+        <p>Собирайте воздуховоды по направлению от вентилятора или приточной установки к диффузорам. Стыкуйте секции по фальцевому замку или ниппельному соединению. Круглые спирально-навивные воздуховоды соединяются ниппелями с хомутами.</p>
+        <h2>Шаг 4. Герметизация стыков</h2>
+        <p>Все стыки и фланцевые соединения проклейте алюминиевой самоклеящейся лентой. Фланцевые соединения дополнительно промажьте силиконовым герметиком. Негерметичные стыки — главная причина потерь давления и шума в системе.</p>
+        <h2>Шаг 5. Подключение к оборудованию</h2>
+        <p>Присоединение воздуховодов к вентилятору или приточной установке выполняйте через гибкую вставку (компенсатор). Это исключит передачу вибрации от оборудования на воздуховоды и снизит уровень шума.</p>
+        <div class="art-cta">
+          <h3>Нужны воздуховоды и комплектующие?</h3>
+          <p>Более 5 000 позиций на складе. Доставка по Москве и МО на следующий день</p>
+          <a href="index.html#catalog">Смотреть каталог →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ART 3 -->
+  <div class="article-wrap" id="art3">
+    <div class="container">
+      <button class="art-back" onclick="closeArticle()">← Все статьи</button>
+      <div class="art-cat">Вентиляция</div>
+      <h1 class="art-title">Вентиляция в квартире: нормы воздухообмена и как их соблюсти</h1>
+      <div class="art-meta"><span>📅 15 апреля 2025</span><span>⏱ 7 мин чтения</span><span>👁 5 780 просмотров</span></div>
+      <div class="art-hero-img bc-green">🏠</div>
+      <div class="art-body">
+        <p>В большинстве современных квартир с металлопластиковыми окнами естественная вентиляция не справляется. Плотные стеклопакеты исключают инфильтрацию воздуха через щели, и уровень CO₂ в жилых помещениях превышает норму уже через несколько часов после закрытия окон.</p>
+        <h2>Нормы воздухообмена для жилых помещений</h2>
+        <p>Согласно СП 54.13330 и СанПиН 2.1.2.2645-10, минимальные нормы подачи свежего воздуха в жилых помещениях составляют:</p>
+        <table class="art-table">
+          <thead><tr><th>Помещение</th><th>Норма подачи воздуха</th></tr></thead>
+          <tbody>
+            <tr><td>Жилая комната (спальня, гостиная)</td><td>30 м³/ч на человека</td></tr>
+            <tr><td>Кухня с газовой плитой</td><td>60–90 м³/ч вытяжки</td></tr>
+            <tr><td>Кухня с электроплитой</td><td>60 м³/ч вытяжки</td></tr>
+            <tr><td>Санузел совмещённый</td><td>50 м³/ч вытяжки</td></tr>
+            <tr><td>Ванная комната</td><td>25 м³/ч вытяжки</td></tr>
+          </tbody>
+        </table>
+        <h2>Почему естественная вентиляция не работает</h2>
+        <p>Естественная вентиляция работает за счёт разницы давлений между улицей и вентиляционными шахтами. В современных домах три фактора убивают этот процесс: герметичные окна, утеплённые фасады и тёплые зимы (разница температур стала меньше).</p>
+        <div class="art-tip"><strong>Простой тест:</strong> поднесите горящую зажигалку к вентиляционной решётке в ванной. Если пламя не отклоняется в сторону решётки — вентиляция не работает или работает в обратную сторону (опрокидывание тяги).</div>
+        <h2>Решения для квартиры</h2>
+        <ul>
+          <li><strong>Приточный клапан в стене</strong> — простейший вариант, не требует электричества. Производительность 20–40 м³/ч. Подойдёт для одной-двух комнат.</li>
+          <li><strong>Бризер</strong> — приточный клапан с фильтрацией и подогревом. Очищает воздух от пыли, пыльцы и частиц PM2.5.</li>
+          <li><strong>Приточно-вытяжная установка с рекуперацией</strong> — оптимальное решение для квартиры от 60 м². Подаёт свежий воздух, забирает отработанный и возвращает 70–85% тепла.</li>
+        </ul>
+        <div class="art-cta">
+          <h3>Подберём вентиляцию для вашей квартиры</h3>
+          <p>Бесплатная консультация инженера — расскажем, что нужно именно вам</p>
+          <a href="index.html#contact">Получить консультацию →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ART 4 -->
+  <div class="article-wrap" id="art4">
+    <div class="container">
+      <button class="art-back" onclick="closeArticle()">← Все статьи</button>
+      <div class="art-cat">Кондиционирование</div>
+      <h1 class="art-title">Приточная вентиляция vs кондиционер: в чём разница и что нужно вашему офису</h1>
+      <div class="art-meta"><span>📅 3 апреля 2025</span><span>⏱ 9 мин чтения</span><span>👁 3 890 просмотров</span></div>
+      <div class="art-hero-img bc-teal">❄️</div>
+      <div class="art-body">
+        <p>Самое распространённое заблуждение заказчиков: «У нас есть кондиционер, значит с вентиляцией всё нормально». На самом деле кондиционер и вентиляция решают принципиально разные задачи, и замена одного другим невозможна.</p>
+        <h2>Что делает кондиционер</h2>
+        <p>Кондиционер — это система регулирования температуры. Он охлаждает (или нагревает) воздух, который уже находится в помещении, и гоняет его по кругу. Обычный сплит-система <strong>не подаёт свежий воздух с улицы</strong> — это принципиально важно понимать.</p>
+        <div class="art-tip"><strong>Исключение:</strong> существуют кондиционеры с функцией подмеса наружного воздуха (Fresh Air), но их доля на рынке невелика и производительность по вентиляции ограничена — обычно не более 30–50 м³/ч.</div>
+        <h2>Что делает приточная вентиляция</h2>
+        <p>Приточная установка подаёт свежий наружный воздух, предварительно очищая его через фильтры и нагревая или охлаждая до нужной температуры. Она решает задачу воздухообмена — удаления CO₂, влаги, запахов и подачи кислорода.</p>
+        <table class="art-table">
+          <thead><tr><th>Параметр</th><th>Кондиционер</th><th>Приточная вентиляция</th></tr></thead>
+          <tbody>
+            <tr><td>Подача свежего воздуха</td><td>❌ Нет</td><td>✅ Да</td></tr>
+            <tr><td>Охлаждение воздуха</td><td>✅ Да</td><td>⚡ Только с доп. секцией</td></tr>
+            <tr><td>Удаление CO₂</td><td>❌ Нет</td><td>✅ Да</td></tr>
+            <tr><td>Фильтрация наружного воздуха</td><td>❌ Нет</td><td>✅ Да (G4, F7, F9)</td></tr>
+            <tr><td>Нагрев зимой</td><td>✅ Тепловой насос</td><td>✅ Электро/водяной нагрев</td></tr>
+          </tbody>
+        </table>
+        <h2>Почему офису нужны обе системы</h2>
+        <p>В офисе на 10 человек за рабочий день выдыхается около 600 литров CO₂. При норме вентиляции 60 м³/ч на человека необходима приточная установка производительностью не менее 600 м³/ч. Кондиционер решает только температурный комфорт, но не удаляет CO₂ — именно поэтому в офисах без вентиляции к обеду сотрудники ощущают усталость и снижение концентрации.</p>
+        <div class="art-cta">
+          <h3>Рассчитаем вентиляцию для вашего офиса</h3>
+          <p>Подберём оборудование и воздуховоды — бесплатно и в течение дня</p>
+          <a href="index.html#contact">Оставить заявку →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ART 5 -->
+  <div class="article-wrap" id="art5">
+    <div class="container">
+      <button class="art-back" onclick="closeArticle()">← Все статьи</button>
+      <div class="art-cat">Оборудование</div>
+      <h1 class="art-title">Как выбрать приточную установку: мощность, фильтры, производители</h1>
+      <div class="art-meta"><span>📅 22 марта 2025</span><span>⏱ 11 мин чтения</span><span>👁 3 210 просмотров</span></div>
+      <div class="art-hero-img bc-warm">💨</div>
+      <div class="art-body">
+        <p>Приточная установка — сердце любой системы механической вентиляции. От правильного выбора зависит качество воздуха, уровень шума и расходы на электроэнергию на годы вперёд. Разбираем ключевые параметры выбора.</p>
+        <h2>Производительность: как рассчитать</h2>
+        <p>Производительность приточной установки измеряется в м³/ч. Базовый расчёт: <strong>объём помещения × кратность воздухообмена</strong>. Для офисов кратность = 2–3, для ресторанов = 5–10, для производства = 10–20.</p>
+        <div class="art-tip"><strong>Пример:</strong> офис 200 м² × высота 3 м = 600 м³. Кратность 3 → установка на 1800 м³/ч. Берите с запасом 20% → выбирайте 2000 м³/ч.</div>
+        <h2>Тип нагрева</h2>
+        <ul>
+          <li><strong>Электрический нагреватель</strong> — просто, дёшево в монтаже, но дорого в эксплуатации. Подходит для небольших установок до 500 м³/ч.</li>
+          <li><strong>Водяной нагреватель</strong> — требует подключения к теплосети или котлу, но значительно дешевле в эксплуатации. Оптимален для производительности от 1000 м³/ч.</li>
+          <li><strong>Рекуперативный нагрев</strong> — возврат тепла из вытяжного воздуха. КПД 60–85%. Лучший вариант по совокупной стоимости владения.</li>
+        </ul>
+        <h2>Классы фильтрации</h2>
+        <table class="art-table">
+          <thead><tr><th>Класс</th><th>Задерживает</th><th>Где применять</th></tr></thead>
+          <tbody>
+            <tr><td>G4 (грубая очистка)</td><td>Пыль, насекомые, ≥10 мкм</td><td>Первая ступень фильтрации</td></tr>
+            <tr><td>F7 (тонкая очистка)</td><td>Пыльца, споры, ≥1 мкм</td><td>Офисы, жильё, аллергики</td></tr>
+            <tr><td>F9 (высокая очистка)</td><td>PM2.5, мелкая пыль</td><td>Города с загрязнённым воздухом</td></tr>
+            <tr><td>HEPA H13</td><td>Бактерии, вирусы, 0,3 мкм</td><td>Медицина, фармацевтика</td></tr>
+          </tbody>
+        </table>
+        <h2>Популярные производители</h2>
+        <p><strong>Breezart</strong> (Россия) — оптимальное соотношение цена/качество для жилья и небольших коммерческих объектов. <strong>Systemair</strong> (Швеция) — надёжные установки промышленного класса. <strong>Salda</strong> (Литва) — хорошие бюджетные решения. <strong>Daikin</strong>, <strong>Mitsubishi</strong> — премиум-сегмент с VRF-интеграцией.</p>
+        <div class="art-cta">
+          <h3>Поможем подобрать приточную установку</h3>
+          <p>Оставьте заявку — инженер рассчитает параметры бесплатно</p>
+          <a href="index.html#contact">Получить расчёт →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ART 6 -->
+  <div class="article-wrap" id="art6">
+    <div class="container">
+      <button class="art-back" onclick="closeArticle()">← Все статьи</button>
+      <div class="art-cat">Нормы и ГОСТ</div>
+      <h1 class="art-title">ГОСТ и СП на воздуховоды: что важно знать при покупке и монтаже</h1>
+      <div class="art-meta"><span>📅 10 марта 2025</span><span>⏱ 6 мин чтения</span><span>👁 1 870 просмотров</span></div>
+      <div class="art-hero-img bc-purple">📋</div>
+      <div class="art-body">
+        <p>При покупке воздуховодов и проектировании систем вентиляции важно ориентироваться в нормативной базе. Незнание требований приводит к покупке некачественной продукции и нарушениям при монтаже, которые выявляются при проверках.</p>
+        <h2>Основные нормативные документы</h2>
+        <ul>
+          <li><strong>ГОСТ 14918-80</strong> — оцинкованная сталь для воздуховодов. Определяет толщину цинкового покрытия и механические свойства</li>
+          <li><strong>СП 60.13330.2020</strong> — основной строительный свод правил по отоплению, вентиляции и кондиционированию</li>
+          <li><strong>СП 73.13330.2016</strong> — внутренние санитарно-технические системы зданий</li>
+          <li><strong>ГОСТ 33751-2016</strong> — воздуховоды из листового металла, технические требования</li>
+          <li><strong>СП 7.13130.2013</strong> — системы противопожарной защиты, нормы для дымоудаления</li>
+        </ul>
+        <h2>Требования к толщине металла</h2>
+        <p>Согласно ГОСТ 33751-2016, минимальная толщина стенки воздуховода зависит от размера сечения:</p>
+        <table class="art-table">
+          <thead><tr><th>Размер сечения</th><th>Мин. толщина</th></tr></thead>
+          <tbody>
+            <tr><td>До 250 мм (диаметр/сторона)</td><td>0,5 мм</td></tr>
+            <tr><td>251–1000 мм</td><td>0,7–0,9 мм</td></tr>
+            <tr><td>Свыше 1000 мм</td><td>1,0–1,2 мм</td></tr>
+          </tbody>
+        </table>
+        <div class="art-tip"><strong>Как проверить при приёмке:</strong> используйте ультразвуковой толщиномер или простой механический. Недобросовестные производители часто занижают толщину на 0,1–0,2 мм, что при больших объёмах даёт значительную экономию металла за счёт покупателя.</div>
+        <div class="art-cta">
+          <h3>Наша продукция соответствует ГОСТ</h3>
+          <p>Предоставляем сертификаты соответствия на весь ассортимент воздуховодов</p>
+          <a href="index.html#contact">Запросить сертификаты →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ART 7 - SMOKE -->
+  <div class="article-wrap" id="art7">
+    <div class="container">
+      <button class="art-back" onclick="closeArticle()">← Все статьи</button>
+      <div class="art-cat">Воздуховоды</div>
+      <h1 class="art-title">Воздуховоды для дымоудаления: требования, материалы, монтаж</h1>
+      <div class="art-meta"><span>📅 25 февраля 2025</span><span>⏱ 8 мин чтения</span><span>👁 2 650 просмотров</span></div>
+      <div class="art-hero-img bc-dark">🔥</div>
+      <div class="art-body">
+        <p>Системы дымоудаления — особая категория вентиляционных систем, к которым предъявляются жёсткие требования по огнестойкости. Ошибки при проектировании или монтаже могут стоить человеческих жизней, поэтому к этой теме нужно подходить максимально ответственно.</p>
+        <h2>Нормативные требования</h2>
+        <p>Основной документ — <strong>СП 7.13130.2013</strong> «Отопление, вентиляция и кондиционирование. Требования пожарной безопасности». Согласно нормам, воздуховоды систем дымоудаления должны сохранять целостность в условиях пожара в течение нормируемого времени.</p>
+        <h2>Материалы для воздуховодов дымоудаления</h2>
+        <ul>
+          <li><strong>Чёрная листовая сталь</strong> толщиной 1,2–3,0 мм — основной материал. Толщина определяется расчётом.</li>
+          <li><strong>Огнезащитное покрытие</strong> — вспучивающиеся краски типа «Файрекс», «Аттика» или минераловатная обмотка. Обеспечивает предел огнестойкости EI 30, EI 60, EI 90, EI 120.</li>
+        </ul>
+        <table class="art-table">
+          <thead><tr><th>Предел огнестойкости</th><th>Применение</th></tr></thead>
+          <tbody>
+            <tr><td>EI 30</td><td>Коридоры до 3 этажей</td></tr>
+            <tr><td>EI 60</td><td>Многоэтажные жилые дома, ТЦ</td></tr>
+            <tr><td>EI 90</td><td>Высотные здания, больницы</td></tr>
+            <tr><td>EI 120</td><td>Здания особой категории</td></tr>
+          </tbody>
+        </table>
+        <div class="art-tip"><strong>Важно:</strong> все воздуховоды систем дымоудаления должны иметь сертификат пожарной безопасности по ГОСТ Р 53301. Требуйте этот документ у поставщика.</div>
+        <div class="art-cta">
+          <h3>Поставляем воздуховоды для дымоудаления</h3>
+          <p>Чёрная сталь с огнезащитным покрытием. Все сертификаты включены.</p>
+          <a href="index.html#contact">Запросить прайс →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ART 8 - RESTAURANT -->
+  <div class="article-wrap" id="art8">
+    <div class="container">
+      <button class="art-back" onclick="closeArticle()">← Все статьи</button>
+      <div class="art-cat">Вентиляция</div>
+      <h1 class="art-title">Вентиляция ресторана и кухни: нормы, жироуловители, расчёт вытяжки</h1>
+      <div class="art-meta"><span>📅 14 февраля 2025</span><span>⏱ 9 мин чтения</span><span>👁 4 430 просмотров</span></div>
+      <div class="art-hero-img bc-olive">🍽️</div>
+      <div class="art-body">
+        <p>Вентиляция ресторанной кухни — одна из самых технически сложных задач в отрасли. Огромные тепловыделения, жир, запахи, пар — всё это требует мощной и грамотно спроектированной системы вытяжки и компенсации.</p>
+        <h2>Нормы воздухообмена для ресторанов</h2>
+        <p>Согласно СанПиН 2.3.6.1079-01 и СП 118.13330, для ресторанных кухонь установлены следующие нормы:</p>
+        <ul>
+          <li>Горячий цех: 50–100 м³/ч на 1 кВт тепловыделений оборудования</li>
+          <li>Обеденный зал: 30 м³/ч на посетителя или 20 м³/ч на 1 м²</li>
+          <li>Доготовочный цех: 10–15 кратный воздухообмен</li>
+        </ul>
+        <h2>Жироуловители: обязательный элемент</h2>
+        <p>Жироуловители (или жироулавливающие фильтры) устанавливаются непосредственно в вытяжном зонте над плитами, грилями и фритюрами. Они задерживают жировой аэрозоль до попадания его в воздуховоды. Без жироуловителей воздуховоды покрываются жировыми отложениями за несколько месяцев, что создаёт пожарную опасность.</p>
+        <div class="art-tip"><strong>Норма обслуживания:</strong> жировые фильтры необходимо промывать еженедельно, а воздуховоды кухонной вытяжки — не реже одного раза в квартал согласно требованиям пожарной безопасности.</div>
+        <h2>Компенсационный воздух</h2>
+        <p>Мощная вытяжка создаёт разрежение в кухне. Для компенсации необходимо подавать приточный воздух в объёме 80–90% от вытяжного. Оставшиеся 10–20% обеспечивают подпор в обеденный зал, препятствуя проникновению кухонных запахов к гостям.</p>
+        <div class="art-cta">
+          <h3>Нужны воздуховоды для ресторана?</h3>
+          <p>Поставляем жироустойчивые воздуховоды из нержавеющей и оцинкованной стали</p>
+          <a href="index.html#contact">Получить прайс →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ART 9 - RECUPERATOR -->
+  <div class="article-wrap" id="art9">
+    <div class="container">
+      <button class="art-back" onclick="closeArticle()">← Все статьи</button>
+      <div class="art-cat">Оборудование</div>
+      <h1 class="art-title">Рекуператор тепла: экономия до 80% на обогреве приточного воздуха</h1>
+      <div class="art-meta"><span>📅 31 января 2025</span><span>⏱ 7 мин чтения</span><span>👁 3 540 просмотров</span></div>
+      <div class="art-hero-img bc-mint">♻️</div>
+      <div class="art-body">
+        <p>Рекуперация тепла — технология, позволяющая передавать тепловую энергию от вытяжного воздуха к приточному, не смешивая потоки. Это значительно снижает затраты на обогрев зимой и охлаждение летом.</p>
+        <h2>Как работает рекуперация</h2>
+        <p>Тёплый вытяжной воздух (например, +22°C) проходит через теплообменник, отдаёт своё тепло и выходит наружу при +3°C. Холодный приточный воздух (-15°C с улицы) проходит через тот же теплообменник с другой стороны и нагревается до +12–15°C. Электрический нагреватель догревает его только с +14 до +20°C вместо с -15 до +20°C.</p>
+        <h2>Типы рекуператоров</h2>
+        <table class="art-table">
+          <thead><tr><th>Тип</th><th>КПД</th><th>Особенности</th></tr></thead>
+          <tbody>
+            <tr><td>Пластинчатый перекрёстный</td><td>50–65%</td><td>Простой, дешёвый, возможно обмерзание</td></tr>
+            <tr><td>Роторный</td><td>75–85%</td><td>Высокий КПД, риск переноса запахов</td></tr>
+            <tr><td>Противоточный пластинчатый</td><td>80–92%</td><td>Лучший КПД, дороже</td></tr>
+            <tr><td>Тепловые трубки</td><td>50–60%</td><td>Надёжны, нет движущихся частей</td></tr>
+          </tbody>
+        </table>
+        <h2>Расчёт экономии для квартиры</h2>
+        <p>Квартира 80 м², приточная установка 300 м³/ч, Москва (отопительный сезон 7 месяцев). Без рекуперации на нагрев воздуха уходит около 4 500 кВт·ч в год. С рекуператором КПД 75% — только 1 125 кВт·ч. При тарифе 6 руб/кВт·ч экономия составит <strong>20 000 руб/год</strong>. Окупаемость рекуператора — 2–3 сезона.</p>
+        <div class="art-cta">
+          <h3>Поможем подобрать приточно-вытяжную установку с рекуперацией</h3>
+          <p>В наличии Zehnder, Lossnay, Blauberg — с доставкой по Москве</p>
+          <a href="index.html#catalog">Смотреть каталог →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ART 10 - MISTAKES -->
+  <div class="article-wrap" id="art10">
+    <div class="container">
+      <button class="art-back" onclick="closeArticle()">← Все статьи</button>
+      <div class="art-cat">Монтаж</div>
+      <h1 class="art-title">5 главных ошибок при монтаже воздуховодов — и как их избежать</h1>
+      <div class="art-meta"><span>📅 18 января 2025</span><span>⏱ 5 мин чтения</span><span>👁 6 120 просмотров</span></div>
+      <div class="art-hero-img bc-orange">⚡</div>
+      <div class="art-body">
+        <p>По нашему опыту работы с монтажными организациями, большинство проблем в готовых системах вентиляции — следствие нескольких типичных ошибок, допущенных при монтаже. Рассказываем о них подробно, чтобы вы могли их избежать.</p>
+        <h2>Ошибка 1: Неверный подбор сечения</h2>
+        <p>Заниженное сечение воздуховода увеличивает скорость потока, что ведёт к росту шума (слышен свист) и потерям давления. Рекомендуемая скорость в магистральных участках — не более 6–8 м/с, в ответвлениях — 4–5 м/с. Завышенное сечение — лишние расходы на материалы.</p>
+        <h2>Ошибка 2: Негерметичные стыки</h2>
+        <p>Незаклеенные стыки — источник потерь давления и шума. Воздух «свистит» через щели, система не развивает расчётное давление, производительность падает на 15–30%. Все фланцевые соединения должны быть проклеены алюминиевой лентой и промазаны герметиком.</p>
+        <div class="art-tip"><strong>Проверка:</strong> после монтажа проведите аэродинамические испытания системы. Согласно ГОСТ 22270, допустимые утечки не должны превышать 5–10% расчётного расхода воздуха.</div>
+        <h2>Ошибка 3: Слишком большой шаг подвесов</h2>
+        <p>Воздуховоды большого сечения под собственным весом провисают между точками крепления, что нарушает геометрию системы и создаёт дополнительные нагрузки на соединения. Шаг подвесов: прямоугольные — не более 1,5–2 м, круглые — не более 3–4 м.</p>
+        <h2>Ошибка 4: Острые углы в фасонных изделиях</h2>
+        <p>Прямоугольные отводы без скруглений создают зоны турбулентности, которые увеличивают аэродинамическое сопротивление и генерируют шум. Используйте отводы с радиусными галтелями или с направляющими лопатками.</p>
+        <h2>Ошибка 5: Отсутствие гибких вставок у оборудования</h2>
+        <p>Жёсткое подключение воздуховода к вентилятору или приточной установке передаёт вибрацию на всю систему. Гибкая вставка (компенсатор) длиной 150–200 мм разрывает эту связь и снижает уровень шума на 5–10 дБ.</p>
+        <div class="art-cta">
+          <h3>Качественные воздуховоды — меньше проблем при монтаже</h3>
+          <p>Точная геометрия и соответствие ГОСТ упрощают монтаж и обеспечивают герметичность</p>
+          <a href="index.html#contact">Запросить прайс →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REMAINING ARTICLES: 11-15 (compact) -->
+  <div class="article-wrap" id="art11">
+    <div class="container">
+      <button class="art-back" onclick="closeArticle()">← Все статьи</button>
+      <div class="art-cat">Воздуховоды</div>
+      <h1 class="art-title">Нержавеющие воздуховоды AISI 304 vs AISI 316: в чём разница</h1>
+      <div class="art-meta"><span>📅 5 января 2025</span><span>⏱ 6 мин чтения</span><span>👁 1 990 просмотров</span></div>
+      <div class="art-hero-img bc-rose">🔬</div>
+      <div class="art-body">
+        <p>Нержавеющая сталь используется там, где оцинкованная не справляется: агрессивные среды, высокая влажность, пищевые производства, бассейны и химические предприятия. Однако не любая нержавейка одинакова — AISI 304 и AISI 316 существенно отличаются по составу и областям применения.</p>
+        <h2>AISI 304 — универсальная нержавейка</h2>
+        <p>Сталь 304 (08Х18Н10 по российской классификации) — самая распространённая нержавеющая сталь. Содержит 18% хрома и 10% никеля. Устойчива к большинству бытовых кислот, воде и влаге. Применяется в пищевой промышленности, медицине, вентиляции бассейнов и для воздуховодов в помещениях с повышенной влажностью.</p>
+        <h2>AISI 316 — кислотостойкая</h2>
+        <p>Сталь 316 (10Х17Н13М2Т) содержит дополнительно 2–3% молибдена, что делает её устойчивой к хлоридам и многим кислотам. Необходима в морском климате, на химических производствах, в фармацевтике и для вытяжки кислотных паров.</p>
+        <table class="art-table">
+          <thead><tr><th>Параметр</th><th>AISI 304</th><th>AISI 316</th></tr></thead>
+          <tbody>
+            <tr><td>Устойчивость к хлоридам</td><td>Средняя</td><td>Высокая</td></tr>
+            <tr><td>Цена (относительно)</td><td>1×</td><td>1.4–1.6×</td></tr>
+            <tr><td>Пищевая промышленность</td><td>✅</td><td>✅</td></tr>
+            <tr><td>Химическое производство</td><td>⚡ Зависит от среды</td><td>✅</td></tr>
+            <tr><td>Морской климат</td><td>❌</td><td>✅</td></tr>
+          </tbody>
+        </table>
+        <div class="art-cta"><h3>Нержавеющие воздуховоды на складе</h3><p>AISI 304 и AISI 316 — любые диаметры и сечения</p><a href="index.html#contact">Уточнить наличие →</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-wrap" id="art12">
+    <div class="container">
+      <button class="art-back" onclick="closeArticle()">← Все статьи</button>
+      <div class="art-cat">Кондиционирование</div>
+      <h1 class="art-title">VRF/VRV системы кондиционирования: что это и когда выгодно ставить</h1>
+      <div class="art-meta"><span>📅 20 декабря 2024</span><span>⏱ 10 мин чтения</span><span>👁 2 780 просмотров</span></div>
+      <div class="art-hero-img bc-navy">🏢</div>
+      <div class="art-body">
+        <p>VRF (Variable Refrigerant Flow) или VRV — системы кондиционирования с переменным расходом хладагента. Они позволяют подключить к одному наружному блоку до 50+ внутренних блоков с индивидуальным управлением каждой зоны.</p>
+        <h2>Принцип работы VRF</h2>
+        <p>В отличие от обычных мультисплитов, в VRF-системе используется инверторный компрессор и электронные расширительные вентили на каждом внутреннем блоке. Система точно дозирует количество хладагента, поступающего в каждый блок, что обеспечивает высокую энергоэффективность (COP до 4–5).</p>
+        <h2>Когда выгодно применять VRF</h2>
+        <ul>
+          <li>Офисные здания от 500 м² с раздельным управлением по зонам</li>
+          <li>Гостиницы — индивидуальное управление в каждом номере</li>
+          <li>Торговые центры и многозальные кинотеатры</li>
+          <li>Здания с разным режимом работы помещений</li>
+        </ul>
+        <h2>Сравнение с обычными сплит-системами</h2>
+        <table class="art-table">
+          <thead><tr><th>Параметр</th><th>Обычные сплиты</th><th>VRF</th></tr></thead>
+          <tbody>
+            <tr><td>Инвестиции</td><td>Низкие</td><td>Высокие</td></tr>
+            <tr><td>Эксплуатация</td><td>Высокие</td><td>Низкие</td></tr>
+            <tr><td>Гибкость зонирования</td><td>Ограниченная</td><td>Максимальная</td></tr>
+            <tr><td>Длина трубопровода</td><td>До 25 м</td><td>До 150 м</td></tr>
+            <tr><td>Окупаемость VRF vs сплиты</td><td>—</td><td>3–6 лет</td></tr>
+          </tbody>
+        </table>
+        <div class="art-cta"><h3>Поставляем воздуховоды для VRF-систем</h3><p>Любые сечения и длины — отгрузка на следующий день</p><a href="index.html#contact">Оставить заявку →</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-wrap" id="art13">
+    <div class="container">
+      <button class="art-back" onclick="closeArticle()">← Все статьи</button>
+      <div class="art-cat">Нормы и ГОСТ</div>
+      <h1 class="art-title">Толщина стенки воздуховода по ГОСТ: как проверить и почему это важно</h1>
+      <div class="art-meta"><span>📅 8 декабря 2024</span><span>⏱ 8 мин чтения</span><span>👁 3 100 просмотров</span></div>
+      <div class="art-hero-img bc-blue">📏</div>
+      <div class="art-body">
+        <p>Занижение толщины металла — самый распространённый способ удешевить производство воздуховодов без изменения внешнего вида. Воздуховод из стали 0,5 мм вместо заявленных 0,7 мм выглядит одинаково, но весит на 28% меньше и имеет значительно меньший срок службы.</p>
+        <h2>Как проверить толщину при приёмке</h2>
+        <ul>
+          <li><strong>Ультразвуковой толщиномер</strong> — наиболее точный метод. Приборы типа ТУЗ-2 или DM-4 стоят от 8 000 руб.</li>
+          <li><strong>Механический микрометр</strong> — требует разрезки образца, но даёт точность ±0,01 мм</li>
+          <li><strong>Взвешивание</strong> — косвенный метод: взвесьте метр воздуховода и сравните с расчётной массой</li>
+        </ul>
+        <h2>Расчётная масса 1 пм воздуховода</h2>
+        <table class="art-table">
+          <thead><tr><th>Сечение</th><th>Толщина 0,5 мм</th><th>Толщина 0,7 мм</th><th>Толщина 0,9 мм</th></tr></thead>
+          <tbody>
+            <tr><td>200×200 мм</td><td>1,26 кг/пм</td><td>1,76 кг/пм</td><td>2,26 кг/пм</td></tr>
+            <tr><td>400×200 мм</td><td>1,88 кг/пм</td><td>2,64 кг/пм</td><td>3,39 кг/пм</td></tr>
+            <tr><td>Ø200 мм</td><td>0,79 кг/пм</td><td>1,10 кг/пм</td><td>1,42 кг/пм</td></tr>
+          </tbody>
+        </table>
+        <div class="art-tip"><strong>Наш принцип:</strong> Лаборатория вентиляции производит воздуховоды строго по ГОСТ. Заявленная толщина металла — гарантированная толщина. Предоставляем протоколы измерений по запросу.</div>
+        <div class="art-cta"><h3>Воздуховоды с гарантией соответствия ГОСТ</h3><p>Предоставляем сертификаты и протоколы измерений на каждую партию</p><a href="index.html#contact">Запросить документы →</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-wrap" id="art14">
+    <div class="container">
+      <button class="art-back" onclick="closeArticle()">← Все статьи</button>
+      <div class="art-cat">Вентиляция</div>
+      <h1 class="art-title">Промышленная вентиляция: виды, расчёт кратности, выбор оборудования</h1>
+      <div class="art-meta"><span>📅 25 ноября 2024</span><span>⏱ 12 мин чтения</span><span>👁 2 430 просмотров</span></div>
+      <div class="art-hero-img bc-warm">🏭</div>
+      <div class="art-body">
+        <p>Промышленная вентиляция — одна из наиболее технически сложных областей, требующая индивидуального проектирования под каждый тип производства. Требования к вентиляции литейного цеха и кондитерского производства различаются кардинально.</p>
+        <h2>Виды промышленной вентиляции</h2>
+        <ul>
+          <li><strong>Общеобменная</strong> — разбавляет вредные вещества по всему объёму помещения. Применяется, когда источники загрязнения рассредоточены.</li>
+          <li><strong>Местная вытяжка</strong> — удаляет загрязнения непосредственно у источника (вытяжной зонт, бортовой отсос). Значительно эффективнее и экономичнее общеобменной при точечных источниках.</li>
+          <li><strong>Аспирация</strong> — специализированная система для сбора пыли (деревообработка, мукомольные производства, металлообработка).</li>
+          <li><strong>Противодымная</strong> — обеспечивает эвакуацию людей при пожаре.</li>
+        </ul>
+        <h2>Расчёт кратности воздухообмена</h2>
+        <p>Кратность (К) = L / V, где L — количество воздуха (м³/ч), V — объём помещения (м³). Нормативные кратности для производственных помещений по СП 60.13330:</p>
+        <table class="art-table">
+          <thead><tr><th>Тип производства</th><th>Кратность</th></tr></thead>
+          <tbody>
+            <tr><td>Механосборочный цех</td><td>3–5</td></tr>
+            <tr><td>Сварочное производство</td><td>10–20</td></tr>
+            <tr><td>Деревообработка</td><td>10–15</td></tr>
+            <tr><td>Покрасочный цех</td><td>20–40</td></tr>
+            <tr><td>Пищевое производство</td><td>5–10</td></tr>
+          </tbody>
+        </table>
+        <div class="art-cta"><h3>Воздуховоды для промышленных объектов</h3><p>Большие сечения в наличии. Изготовление по чертежу от 3 дней.</p><a href="index.html#contact">Получить КП →</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-wrap" id="art15">
+    <div class="container">
+      <button class="art-back" onclick="closeArticle()">← Все статьи</button>
+      <div class="art-cat">Оборудование</div>
+      <h1 class="art-title">Шумоглушители для вентиляции: когда нужны и как выбрать</h1>
+      <div class="art-meta"><span>📅 12 ноября 2024</span><span>⏱ 7 мин чтения</span><span>👁 2 210 просмотров</span></div>
+      <div class="art-hero-img bc-green">🔇</div>
+      <div class="art-body">
+        <p>Шум вентиляции — частая жалоба в жилых и офисных зданиях. Правильно подобранный шумоглушитель снижает уровень шума на 15–30 дБ без значительного увеличения аэродинамического сопротивления системы.</p>
+        <h2>Источники шума в системе вентиляции</h2>
+        <ul>
+          <li>Вентиляторы и приточные установки (механический шум)</li>
+          <li>Потоки воздуха в воздуховодах (аэродинамический шум)</li>
+          <li>Вибрация воздуховодов от работы оборудования</li>
+          <li>Решётки и диффузоры при высокой скорости воздуха</li>
+        </ul>
+        <h2>Типы шумоглушителей</h2>
+        <table class="art-table">
+          <thead><tr><th>Тип</th><th>Снижение шума</th><th>Применение</th></tr></thead>
+          <tbody>
+            <tr><td>Трубчатый (цилиндрический)</td><td>15–25 дБ</td><td>Круглые воздуховоды Ø100–630</td></tr>
+            <tr><td>Прямоугольный пластинчатый</td><td>20–35 дБ</td><td>Крупные прямоугольные каналы</td></tr>
+            <tr><td>Камерный</td><td>25–40 дБ</td><td>Требуется максимальное подавление</td></tr>
+          </tbody>
+        </table>
+        <h2>Правила установки</h2>
+        <p>Шумоглушитель устанавливают сразу после вентилятора (для гашения шума от оборудования) и/или перед диффузором в помещении (для снижения аэродинамического шума). Минимальное расстояние от колена до глушителя — 3 диаметра воздуховода.</p>
+        <div class="art-tip"><strong>Нормы:</strong> допустимый уровень шума в жилых помещениях — 30–35 дБА днём, 25 дБА ночью (СН 2.2.4/2.1.8.562-96). В офисах — 45–55 дБА.</div>
+        <div class="art-cta"><h3>Шумоглушители в наличии</h3><p>Круглые Ø100–630 мм и прямоугольные. Отгрузка на следующий день.</p><a href="index.html#contact">Уточнить наличие →</a></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /articles-container -->
+
+<footer class="blog-footer">
+  <div class="blog-footer-inner">
+    <a class="logo" href="index.html">Лаборатория <span>вентиляции</span></a>
+    <p style="font-size:12px;color:rgba(255,255,255,.3)">© 2026 ООО «Юнигруп» · ИНН 7751269262</p>
+  </div>
+</footer>
+
+<script>
+function openArticle(id){
+  document.getElementById('blog-list').style.display='none'
+  document.getElementById('articles-container').style.display='block'
+  document.querySelectorAll('.article-wrap').forEach(a=>a.classList.remove('open'))
+  document.getElementById(id).classList.add('open')
+  window.scrollTo({top:0,behavior:'smooth'})
+}
+function closeArticle(){
+  document.getElementById('blog-list').style.display='block'
+  document.getElementById('articles-container').style.display='none'
+  document.querySelectorAll('.article-wrap').forEach(a=>a.classList.remove('open'))
+  window.scrollTo({top:0,behavior:'smooth'})
+}
+function filterCards(cat,btn){
+  document.querySelectorAll('.filt').forEach(b=>b.classList.remove('active'))
+  btn.classList.add('active')
+  document.querySelectorAll('.blog-card').forEach(card=>{
+    card.style.display=(cat==='all'||card.dataset.cat===cat)?'flex':'none'
+  })
+}
+// init
+document.getElementById('articles-container').style.display='none'
+</script>
+</body>
+</html>
