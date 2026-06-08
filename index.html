@@ -1146,7 +1146,7 @@ footer{background:var(--ink);padding:36px 0}
               <textarea class="fi" rows="4" name="message" placeholder="Опишите, что нужно. Можно указать размеры и количество воздуховодов..."></textarea>
             </div>
           </div>
-          <p class="form-agree" style="margin:12px 0 16px">Нажимая «Отправить», вы соглашаетесь с политикой обработки персональных данных</p>
+          <p class="form-agree" style="margin:12px 0 16px">Нажимая «Отправить», вы соглашаетесь с <a href="privacy.html" style="color:var(--blue);text-decoration:none" target="_blank">политикой обработки персональных данных</a></p>
           <button type="submit" id="submit-btn" class="btn btn-blue form-submit" style="width:100%;justify-content:center;padding:16px">Отправить заявку →</button>
         </form>
       </div>
@@ -1196,9 +1196,26 @@ footer{background:var(--ink);padding:36px 0}
   <div class="footer-inner">
     <a class="footer-logo" href="#hero">Лаборатория <span>вентиляции</span></a>
     <p class="footer-copy">© 2026 ООО «Юнигруп» · Воздуховоды и вентиляционное оборудование</p>
+    <a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s" onmouseover="this.style.color='rgba(255,255,255,.7)'" onmouseout="this.style.color='rgba(255,255,255,.3)'">Политика конфиденциальности</a>
     <p class="footer-inn">ИНН 7751269262</p>
   </div>
 </footer>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#fff;border-top:2px solid #e2e6f0;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;box-shadow:0 -4px 24px rgba(0,0,0,.1);flex-wrap:wrap">
+  <p style="font-size:13px;color:#3a4060;line-height:1.5;flex:1;min-width:260px;margin:0">
+    Мы используем файлы <strong>cookie</strong> для улучшения работы сайта. Продолжая использование сайта, вы соглашаетесь с <a href="privacy.html" style="color:#1952e8">политикой конфиденциальности</a>.
+  </p>
+  <div style="display:flex;gap:10px;flex-shrink:0">
+    <button onclick="cookieDecline()" style="background:transparent;color:#64748b;border:1.5px solid #e2e6f0;padding:9px 18px;border-radius:6px;font-family:'Geologica',sans-serif;font-size:13px;font-weight:600;cursor:pointer">Только необходимые</button>
+    <button onclick="cookieAccept()" style="background:#1952e8;color:#fff;border:none;padding:9px 22px;border-radius:6px;font-family:'Geologica',sans-serif;font-size:13px;font-weight:700;cursor:pointer">Принять все</button>
+  </div>
+</div>
+<script>
+(function(){if(localStorage.getItem('cookie_consent'))document.getElementById('cookie-banner').style.display='none'})();
+function cookieAccept(){localStorage.setItem('cookie_consent','all');document.getElementById('cookie-banner').style.display='none'}
+function cookieDecline(){localStorage.setItem('cookie_consent','necessary');document.getElementById('cookie-banner').style.display='none'}
+</script>
 
 <div class="toast" id="toast">✓ Заявка принята! Ответим в течение 15 минут.</div>
 
