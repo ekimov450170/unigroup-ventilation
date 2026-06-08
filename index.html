@@ -327,9 +327,9 @@ footer{background:var(--ink);padding:36px 0}
   /* Nav */
   .nav{padding:0 16px;height:60px}
   .nav-links{display:none}
-  .nav-phone{font-size:12px}
-  .nav-cta{padding:8px 14px;font-size:12px}
-  .logo{font-size:16px;letter-spacing:0}
+  .nav-phone{font-size:12px;display:inline !important}
+  .nav-cta{padding:8px 12px;font-size:12px}
+  .logo{font-size:14px;letter-spacing:0}
 
   /* Hero */
   .hero-inner{padding:40px 0 48px}
@@ -407,9 +407,10 @@ footer{background:var(--ink);padding:36px 0}
 
 /* ── SMALL MOBILE ── */
 @media(max-width:400px){
-  .hero-title{font-size:26px}
-  .nav-phone{display:none}
-  .nav-cta{margin-left:auto}
+  .hero-title{font-size:24px}
+  .nav-phone{font-size:11px !important;display:inline !important}
+  .nav-cta{padding:7px 10px;font-size:11px}
+  .logo{font-size:13px}
   .stats-bar-inner{grid-template-columns:repeat(2,1fr)}
   .sb-n{font-size:22px}
   .hero-chips{display:none}
@@ -444,7 +445,7 @@ footer{background:var(--ink);padding:36px 0}
   <div class="hero-inner">
     <div class="hero-left">
       <div class="hero-kicker"><span></span>&nbsp;Собственное производство</div>
-      <h1 class="hero-title">Воздуховоды<em>и вентиляция</em>от производителя</h1>
+      <h1 class="hero-title">Воздуховоды<br>и вентиляция<em>от производителя</em></h1>
       <p class="hero-desc">Производство и продажа воздуховодов, фасонных изделий и вентиляционного оборудования. Более 5 000 позиций на складе. Изготовление по чертежам от 3 дней.</p>
       <div class="hero-btns">
         <a href="#calculator" class="btn btn-blue">Рассчитать стоимость →</a>
