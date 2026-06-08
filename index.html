@@ -993,23 +993,23 @@ footer{background:var(--ink);padding:36px 0}
       <div class="form-card">
         <h3>Оставьте заявку</h3>
         <p class="sub">Ответим в течение 15 минут в рабочее время и пришлём актуальный прайс-лист</p>
-        <form onsubmit="submitForm(event)">
+        <form id="contact-form" onsubmit="submitForm(event)">
           <div class="form-grid">
             <div class="form-group">
               <label class="fl">Ваше имя *</label>
-              <input class="fi" type="text" placeholder="Иван Иванов" required>
+              <input class="fi" type="text" name="name" placeholder="Иван Иванов" required>
             </div>
             <div class="form-group">
               <label class="fl">Телефон *</label>
-              <input class="fi" type="tel" placeholder="+7 (___) ___-__-__" required>
+              <input class="fi" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
             </div>
             <div class="form-group">
               <label class="fl">Email</label>
-              <input class="fi" type="email" placeholder="ivan@company.ru">
+              <input class="fi" type="email" name="email" placeholder="ivan@company.ru">
             </div>
             <div class="form-group">
               <label class="fl">Тип запроса</label>
-              <select class="fi">
+              <select class="fi" name="request_type">
                 <option value="" disabled selected>Выберите...</option>
                 <option>Нужен прайс-лист</option>
                 <option>Есть спецификация / чертёж</option>
@@ -1020,11 +1020,11 @@ footer{background:var(--ink);padding:36px 0}
             </div>
             <div class="form-group">
               <label class="fl">Организация</label>
-              <input class="fi" type="text" placeholder="ООО «Название»">
+              <input class="fi" type="text" name="company" placeholder="ООО «Название»">
             </div>
             <div class="form-group">
               <label class="fl">Удобный мессенджер</label>
-              <select class="fi">
+              <select class="fi" name="messenger">
                 <option value="" disabled selected>Выберите...</option>
                 <option>WhatsApp</option>
                 <option>Telegram</option>
@@ -1033,11 +1033,11 @@ footer{background:var(--ink);padding:36px 0}
             </div>
             <div class="form-group full">
               <label class="fl">Комментарий / список позиций</label>
-              <textarea class="fi" rows="4" placeholder="Опишите, что нужно. Можно указать размеры и количество воздуховодов..."></textarea>
+              <textarea class="fi" rows="4" name="message" placeholder="Опишите, что нужно. Можно указать размеры и количество воздуховодов..."></textarea>
             </div>
           </div>
           <p class="form-agree" style="margin:12px 0 16px">Нажимая «Отправить», вы соглашаетесь с политикой обработки персональных данных</p>
-          <button type="submit" class="btn btn-blue form-submit" style="width:100%;justify-content:center;padding:16px">Отправить заявку →</button>
+          <button type="submit" id="submit-btn" class="btn btn-blue form-submit" style="width:100%;justify-content:center;padding:16px">Отправить заявку →</button>
         </form>
       </div>
 
@@ -1271,12 +1271,45 @@ function toggleFaq(q){
 }
 
 // ── FORM ──
-function submitForm(e){
+async function submitForm(e){
   e.preventDefault()
-  const t=document.getElementById('toast')
-  t.classList.add('show')
-  setTimeout(()=>t.classList.remove('show'),4500)
-  e.target.reset()
+  const form = e.target
+  const btn = document.getElementById('submit-btn')
+  const toast = document.getElementById('toast')
+
+  // Disable button while sending
+  btn.disabled = true
+  btn.textContent = 'Отправляем...'
+  btn.style.opacity = '0.7'
+
+  try {
+    const data = new FormData(form)
+    const res = await fetch('https://formspree.io/f/mvznaaob', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+
+    if (res.ok) {
+      // Success
+      toast.style.background = 'var(--green)'
+      toast.textContent = '✓ Заявка отправлена! Ответим в течение 15 минут.'
+      toast.classList.add('show')
+      setTimeout(() => toast.classList.remove('show'), 5000)
+      form.reset()
+    } else {
+      throw new Error('server error')
+    }
+  } catch(err) {
+    toast.style.background = '#e53e3e'
+    toast.textContent = '✗ Ошибка отправки. Напишите нам в WhatsApp.'
+    toast.classList.add('show')
+    setTimeout(() => toast.classList.remove('show'), 5000)
+  } finally {
+    btn.disabled = false
+    btn.textContent = 'Отправить заявку →'
+    btn.style.opacity = '1'
+  }
 }
 
 // ── SCROLL ANIMATIONS ──
